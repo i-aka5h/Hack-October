@@ -234,3 +234,20 @@ main {
   backdrop-filter: blur(3px);
   z-index: 5;
 }
+
+.winner-model{
+  text-align: center;
+  position: absolute;
+  z-index: 100;
+  height: 30rem;
+  width: 40rem;
+  background-color: white;
+  border-radius: 1rem;
+}
+.winner{
+  font-size: 5rem;
+  margin: 5rem auto;
+}
+.winner-model p{
+  font-size: 4rem;
+}

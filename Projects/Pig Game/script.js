@@ -1,17 +1,23 @@
 'use strict';
 // start model elements
 const startModel = document.querySelector(".start-model")
-const startModelXbtn = document.querySelector('.fa-xmark')
+const startModelXbtn = document.querySelector('.close-start-model')
+const winnerModelXbtn = document.querySelector('.close-winner-model')
 const toggleRule = document.querySelector('.btn--instruction')
 const startGameBtn = document.querySelector('.start-game-btn')
 const overlay = document.querySelector('.overlay')
-startGameBtn.addEventListener('click', closeModel)
-startModelXbtn.addEventListener('click', closeModel)
-toggleRule.addEventListener('click', closeModel)
+const winnerModel = document.querySelector('.winner-model')
+const winner = document.querySelector('.winner')
+const winEmoji = document.querySelector('.winner-emoji')
+
+startGameBtn.addEventListener('click', closeStartModel)
+startModelXbtn.addEventListener('click', closeStartModel)
+toggleRule.addEventListener('click', closeStartModel)
+winnerModelXbtn.addEventListener('click', closeWinnerModel)
 
 
-// closing Models
-function closeModel(){
+// closing Start Model
+function closeStartModel(){
     if((currentScore > 0) || (scores[0] > 0 || scores[1] > 0 )){
         startGameBtn.textContent = "⏸ Resume"
     }
@@ -19,6 +25,12 @@ function closeModel(){
         startGameBtn.textContent = "▶ PLAY"
     }
     startModel.classList.toggle('hidden');
+    overlay.classList.toggle('hidden')
+}
+
+// closing Winner Model
+function closeWinnerModel(){
+    winnerModel.classList.toggle('hidden')
     overlay.classList.toggle('hidden')
 }
 
@@ -44,6 +56,7 @@ let scores = [0, 0]
 let currentScore = 0
 let activePlayer = 0
 let playing = true
+let winnerEmoji = ['😁', '😎', '🎉', '🥳', '👍']
 
 
 
@@ -103,7 +116,10 @@ btnHold.addEventListener('click',
                 playing = false
                 document.querySelector(`.player--${activePlayer}`).classList.add('player--winner')
                 document.querySelector(`.player--${activePlayer}`).classList.remove('player--active')
-                document.querySelector('.dice').classList.add('hidden')    
+                document.querySelector('.dice').classList.add('hidden')
+                winner.textContent = `Player${activePlayer+1}`
+                winnerModel.classList.toggle('hidden')
+                overlay.classList.toggle('hidden')    
             }else{
             // 3. Switch the player
                 switchPlayer() 
