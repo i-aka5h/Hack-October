@@ -5,10 +5,33 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <title>Pig Game</title>
   </head>
   <body>
-    <main>
+    <section class="start-model">
+      <i class="fa-solid fa-xmark"></i>
+      <img src="../Pig Game/images/pig-image.jpg" alt="">
+      <div class="game-name">Welcome To Pig Game</div>
+      <div class="game-instruction">
+        <div class="players-number">🐷 VS 🐷</div>
+        <ul class="control-list">
+          <li>roll the 🎲 to get points</li>
+          <li>dice rolls to one (Player Changes)</li>
+          <li>store points using 📥</li>
+          <li>First Player to get 30 points WINS!🎉</li>
+        </ul>
+        <div class="imp-note">
+          NOTE:
+          Current stores temporary scores
+          <br>
+          Use hold to store permanet scores
+        </div>
+        <button class="btn start-game-btn">▶PLAY</button>
+      </div>
+    </section>
+    <div class="overlay"></div>
+    <main>  
       <section class="player player--0 player--active">
         <h2 class="name" id="name--0">Player 1</h2>
         <p class="score" id="score--0">43</p>
@@ -30,6 +53,7 @@
       <button class="btn btn--new">🔃 New game</button>
       <button class="btn btn--roll">🎲 Roll dice</button>
       <button class="btn btn--hold">📥 Hold</button>
+      <button class="btn btn--instruction">🧾 Rules</button>
     </main>
     <script src="script.js"></script>
   </body>

@@ -1,4 +1,27 @@
 'use strict';
+// start model elements
+const startModel = document.querySelector(".start-model")
+const startModelXbtn = document.querySelector('.fa-xmark')
+const toggleRule = document.querySelector('.btn--instruction')
+const startGameBtn = document.querySelector('.start-game-btn')
+const overlay = document.querySelector('.overlay')
+startGameBtn.addEventListener('click', closeModel)
+startModelXbtn.addEventListener('click', closeModel)
+toggleRule.addEventListener('click', closeModel)
+
+
+// closing Models
+function closeModel(){
+    if((currentScore > 0) || (scores[0] > 0 || scores[1] > 0 )){
+        startGameBtn.textContent = "⏸ Resume"
+    }
+    else{
+        startGameBtn.textContent = "▶ PLAY"
+    }
+    startModel.classList.toggle('hidden');
+    overlay.classList.toggle('hidden')
+}
+
 
 // Selecting elements
 const player0El = document.querySelector('.player--0')
@@ -21,6 +44,8 @@ let scores = [0, 0]
 let currentScore = 0
 let activePlayer = 0
 let playing = true
+
+
 
 // Hiding the dice image.
 diceEl.classList.add('hidden')
@@ -73,7 +98,7 @@ btnHold.addEventListener('click',
             
             // 2. Check if player's score is >= 100
             // Finish the game
-            if (scores[activePlayer] >= 20){
+            if (scores[activePlayer] >= 30){
                 //Finish the game
                 playing = false
                 document.querySelector(`.player--${activePlayer}`).classList.add('player--winner')
@@ -108,3 +133,4 @@ document.querySelector('.btn--new').addEventListener('click',
         playing = true
     }
 )
+
