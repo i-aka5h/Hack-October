@@ -1,15 +1,71 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<link rel="stylesheet" href="index.css">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="index.css" />
 
     <title>Document</title>
-    
-</head>
-<body>
+  </head>
+  <body>
+    <div class="box">
+      <header>
+        <h1>Simple Interest Calculator</h1>
+      </header>
+      <div class="amount">
+        Amount
+        <span class="amount_value">
+          <input
+            name="amount"
+            type="number"
+            placeholder="Enter the amount"
+            id="principal"
+          />
+        </span>
+      </div>
+      <div class="range-slider">
+        Interest Rate
+        <span class="range_value">
+          <button onclick="decrement()" id="decrement">-</button>
+          <input
+            class="range-slider__range"
+            type="range"
+            min="1.0"
+            max="20.0"
+            step="0.1"
+            value="2.5"
+            id="rate"
+            onmousemove="show_value(this.value);"
+            onchange="show_value(this.value);"
+          />
+          <button onclick="increment()" id="increment">+</button>
+        </span>
+        <span id="slider_value">2.5%</span>
+      </div>
+      <div class="year">No. of Years</div>
+      <div class="year_value">
+        <label for="years"></label>
+        <select name="Years" id="years">
+          <option value="1">1</option>
+          <option value="2">2</option>
+          <option value="3">3</option>
+          <option value="5">5</option>
+          <option value="10">10</option>
+          <option value="15">15</option>
+          <option value="20">20</option>
+        </select>
+      </div>
+      <div class="button">
+        <button onclick="compute()" id="compute_button">
+          Compute Interest
+        </button>
+      </div>
+      <pre id="result"></pre>
+      <footer>
+        <span>&#9400; Everyone Can Get Rich</span>
+      </footer>
+    </div>
     <script src="index.js"></script>
-</body>
+  </body>
 </html>
