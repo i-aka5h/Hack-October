@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Contact Form</title>
+</head>
+<body>
+
+
+	<form action="mail.php" method="post">
+    <label for="name">Your Name</label>
+    <input type="text"  name="name" placeholder="Your name..">
+    <label for="lname">Email</label>
+    <input type="email"  name="email" placeholder="Your email..">
+   
+    <label for="message">Message</label>
+    <textarea  name="message" placeholder="Write something.." style="height:200px"></textarea>
+    <input type="submit" value="Submit">
+  </form>
+
+</body>
+</html>

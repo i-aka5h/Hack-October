@@ -1,0 +1,238 @@
+@import url('https://fonts.googleapis.com/css2?family=Fira+Sans&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Source+Code+Pro:wght@300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Source+Code+Pro:wght@300&family=Tapestry&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+}
+.sidebar{
+    position: absolute;
+    background-color: rgb(223, 218, 218);
+    font-family: 'Fira Sans', sans-serif;
+    height: 100vh;
+    transition: transform 0.3s ease-in}
+.sidebar nav{
+    padding: 45 px;
+}
+.sidebar nav li{
+    list-style: none;
+    font-size: 30px;
+    padding: 33px 0;
+}
+.sidebar nav li a{
+    text-decoration: none;
+    color: black;
+
+}
+.main{
+    /* background-color: yellow; */
+    width: 90vw;
+}
+.container{
+    display: flex;
+}
+.infocontainer{
+    /* background-color: rgb(202, 9, 128); */
+    height: 58vh;
+    width: 80vw;
+    margin: 144px auto;
+    display: flex;
+    justify-content: space-around;
+}
+.devInfo{
+    font-size: 16px;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    font-family: 'Fira Sans', sans-serif;
+}
+
+.hello{
+ font-size: 3em;
+ 
+}
+.name{
+    font-size: 3em;
+    font-weight: bold;
+    font-family: 'Fira Sans', sans-serif;
+}
+.moreabout{
+    font-size: 1.5em;
+    margin-top: 23px;
+    font-family: 'Source Code Pro', monospace;
+
+}
+.about{
+    font-size: 2.5em;
+}
+.buttons{
+    margin-top: 2.2em;
+    font-size: 16px;
+  
+}
+.btn{
+    padding: 9px 14px;
+    border-radius: 22px;
+    color: white;
+    background-color: dodgerblue;
+    font-weight: bold;
+    font-size: 2em;
+    margin: 3px 3px;
+    cursor: pointer;
+    
+}
+
+.btn-sm{
+    font-size: 10px;
+    padding: 7px 13px;
+    margin: 10px 0;
+}
+.btn:hover{
+    background-color: white;
+    color: dodgerblue;
+}
+.devPic img{
+    height: 58vh;
+}
+.think{
+    height: 58vh;
+
+}
+
+.contactform{
+    padding: 0 34px;
+    font-family: 'Fira Sans', sans-serif;
+    margin: 88px;
+    font-weight: bold;
+}
+.contactform h1{
+    font-family: 'Fira Sans', sans-serif;
+    /* padding: 12px 0; */
+    font-weight:bolder      ;
+
+}
+.contactform form div input{
+  /* width:26vw; */
+  border-radius: 5px;
+  margin: 6px 0;
+  padding: 3px;
+}
+.contactform form {
+ margin: 0 40px;
+
+}
+.contactform form div{
+    padding: 10px 0;
+    display: flex;
+    flex-direction: column;
+}
+#emailHelp{
+    font-size: 11px;
+    color: midnightblue;
+   margin: 0 5px;
+    padding: 3px 0 0 0;
+}
+#form-check{
+flex-direction: row;
+
+}
+#form-check input{
+    width: 24px;
+    margin: 3px 0;
+}
+.blogItem{
+    margin: 20px;
+    font-family: 'Fira Sans', sans-serif;
+}
+.blogContainer{
+    margin: 88px 88px;
+}
+h1{
+    font-family: 'Fira Sans', sans-serif;
+    margin: 23px;
+}
+
+p{
+    font-family: 'Source Code Pro', monospace;
+}
+.intro{
+    margin: 88px 88px;
+}
+.intro h2{
+    font-family: 'Fira Sans', sans-serif;
+    margin: 12px;
+   
+}
+.intro p{
+    font-family: 'Source Code Pro', monospace;
+    margin: 12px;
+   
+}
+
+.skillcontainer{
+    padding: 12px;
+    }
+.skillItem{
+    display: flex;
+    align-items: center;
+    font-family: 'Source Code Pro', monospace;
+    font-weight: 900;
+  
+}
+.skill{
+    width:265px;
+    height: 6px;
+    background-color: red;
+    border: 2px solid black;
+}
+.hundred{
+    width:265px;
+    background-color: blueviolet;
+}
+.fifty{
+    width: 125px;
+    background-color: aqua;
+}
+.t5{
+    width: 75px;
+    background-color: yellow;
+}
+.sidebarGo{
+    transform: translate(-443px, 0px);
+    position: absolute;
+}
+
+
+    .hamburger {
+        position: absolute;
+        cursor: pointer;
+        top: 10px;
+        left: 10px;
+    }
+    .ham{
+        margin-top: 10px;
+        margin-left: 10px;
+    }
+    .cross{
+        margin-left: 106px;
+
+     
+    }
+
+@media (max-width: 963px) {
+    *{
+    /* background-color: rgb(230, 146, 146); */
+}
+.buttons{
+    font-size:6px;
+}
+.devInfo{
+    font-size: 10px;
+}
+.devPic{
+    display: none;
+}
+.intro, .blogContainer, .contactform{
+    margin: 10px;
+}
+}
