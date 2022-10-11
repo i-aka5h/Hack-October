@@ -12,8 +12,20 @@ function App() {
   const [level, setLevel] = useState(0);
   const [heading, setHeading] = useState(`Press Start to start the Game`);
   const [isStarted, setIsStarted] = useState(false)
+  const [userClickedPattern, setUserClickedPattern] = useState([]);
+  const [randomChosenColour, setRandomChosenColour] = useState(null)
 
+  // Functions
+  const playSound = (url) => {
+    //For Playing Audo
+    const audio = new Audio(url);
+    audio.play();
+  };
 
+  const userClick = (color) => {
+    // To check for user Click
+    setUserClickedPattern([...userClickedPattern, color]);
+  };
 
 
   useEffect(() => {
@@ -30,9 +42,12 @@ function App() {
 
   return (
     <div className={`w-full h-[100vh] bg-[#011F3F] text-center`}>
+      {/* Heading Component */}
       <Heading level={level} heading={heading} />
 
-      <BoxContainer  />
+      {/* Box Container Component */}
+      <BoxContainer randomChosenColour={randomChosenColour} userClick={userClick} playSound={playSound} />
+
     </div>
   );
 }
