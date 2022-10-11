@@ -1,0 +1,30 @@
+class Solution {
+    
+   public void func(int ind, int []nums, List<Integer> ds, List<List<Integer>> ansList){
+   
+            ansList.add(new ArrayList<>(ds));         //every Single time when func is called we are adding ds value into ansList.
+        for(int i=ind; i<nums.length; i++){           // loop runs till n-1 times
+            if(i>ind && nums[i]==nums[i-1]) continue; //fOR REMOVAL OF DUPLICATEs- check current and previous index values equal- skips
+            ds.add(nums[i]);                          //adding current index value into ds
+            func(i+1,nums,ds,ansList);                //recursive call - by incrementing i by i+1
+            ds.remove(ds.size()-1);                   //after return remove current index value from ds
+        }
+    }
+    
+    
+    
+    
+    public List<List<Integer>> subsetsWithDup(int[] nums) {
+        List<List<Integer>> ansList = new ArrayList<>();    // list of lists for return
+        Arrays.sort(nums);                                  //sorting to skips duplicate
+        func(0,nums,new ArrayList<>(),ansList);            // call
+        return ansList;                                    // return
+    }
+}
+
+
+
+Time Complexity: O(k * 2^n). O(2^n) for generating every subset and O(k)  to insert every subset in another data structure 
+
+Space Complexity: O(2^n * k) to store every subset of average length k.
+Auxiliary space is O(n)  if n is the depth of the recursion tree.
