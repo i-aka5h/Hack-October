@@ -5,18 +5,30 @@ import { useEffect, useState } from "react"
 import Heading from "./components/Heading";
 import BoxContainer from "./components/BoxContainer";
 import StartButton from "./components/StartButton";
+import InfoIcon from "./components/InfoIcon";
+
+import wrong from "./sounds/wrong.mp3";
+
 
 // App
 function App() {
 
   // States, constants
-  
+
   const buttonColour = ["red", "blue", "green", "yellow"];
+
+  const [gamePattern, setGamePattern] = useState([]);
+  const [userClickedPattern, setUserClickedPattern] = useState([]);
   const [level, setLevel] = useState(0);
   const [heading, setHeading] = useState(`Press Start to start the Game`);
   const [isStarted, setIsStarted] = useState(false)
-  const [userClickedPattern, setUserClickedPattern] = useState([]);
   const [randomChosenColour, setRandomChosenColour] = useState(null)
+
+  const [wrongAnswer, setWrongAnswer] = useState(false);
+  const [showInfo, setShowInfo] = useState(false)
+
+
+
 
   // Functions
   const playSound = (url) => {
@@ -29,6 +41,10 @@ function App() {
     // To check for user Click
     setUserClickedPattern([...userClickedPattern, color]);
   };
+  const handleInfoClick = () => {
+    // To open Info Menu
+    console.log("Info Button Clicked")
+  }
 
   const nextSequence = () => {
     // To Generate next sequence 
@@ -38,6 +54,41 @@ function App() {
     setRandomChosenColour(buttonColour[Math.floor(Math.random() * 4)]);
   };
 
+  const checkAnswer = (i) => {
+    // To check the user answer 
+    if (userClickedPattern[i] !== gamePattern[i]) {
+      setWrongAnswer(true);
+      setIsStarted(false)
+      setHeading("Game-Over Start Again");
+      playSound(wrong);
+      setTimeout(() => {
+        setWrongAnswer(false);
+      }, 200);
+      setGamePattern([]);
+      setLevel(0);
+    } else if (i + 1 === gamePattern.length) {
+      setTimeout(() => {
+        nextSequence();
+      }, 700);
+    }
+  };
+
+  useEffect(() => {
+    // To re-render component after user clicks
+    if (userClickedPattern.length !== 0) {
+      checkAnswer(userClickedPattern.length - 1);
+    }
+    // eslint-disable-next-line
+  }, [userClickedPattern]);
+
+  useEffect(() => {
+    // To re-render component after a new color is choosen
+    if (randomChosenColour) {
+      setGamePattern((gamepattern) => [...gamepattern, randomChosenColour]);
+      setRandomChosenColour(null)
+    }
+  }, [randomChosenColour]);
+
 
   useEffect(() => {
     // To Update heading when the game starts
@@ -46,13 +97,21 @@ function App() {
     }
   }, [isStarted])
 
+  useEffect(() => {
+    // To re-render component after the level changes or the new color choosed or the user selects a wrong answer
 
+  }, [wrongAnswer, level, gamePattern])
 
 
 
 
   return (
-    <div className={`w-full h-[100vh] bg-[#011F3F] text-center`}>
+    <div className={`w-full h-[100vh] ${wrongAnswer ? "bg-[#ff0000] opacity-80" : "bg-[#011F3F]"} text-center ${showInfo && "blur-sm"}`}>
+
+
+      {/* Info Icon component */}
+      {!showInfo && !isStarted && <InfoIcon handleInfoClick={handleInfoClick} />}
+
       {/* Heading Component */}
       <Heading level={level} heading={heading} />
 
