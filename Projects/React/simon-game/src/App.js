@@ -4,11 +4,14 @@ import { useEffect, useState } from "react"
 // App Imports...
 import Heading from "./components/Heading";
 import BoxContainer from "./components/BoxContainer";
+import StartButton from "./components/StartButton";
 
 // App
 function App() {
 
-  // States
+  // States, constants
+  
+  const buttonColour = ["red", "blue", "green", "yellow"];
   const [level, setLevel] = useState(0);
   const [heading, setHeading] = useState(`Press Start to start the Game`);
   const [isStarted, setIsStarted] = useState(false)
@@ -25,6 +28,14 @@ function App() {
   const userClick = (color) => {
     // To check for user Click
     setUserClickedPattern([...userClickedPattern, color]);
+  };
+
+  const nextSequence = () => {
+    // To Generate next sequence 
+    setHeading(null);
+    setLevel(level + 1);
+    setUserClickedPattern([]);
+    setRandomChosenColour(buttonColour[Math.floor(Math.random() * 4)]);
   };
 
 
@@ -48,6 +59,9 @@ function App() {
       {/* Box Container Component */}
       <BoxContainer randomChosenColour={randomChosenColour} userClick={userClick} playSound={playSound} />
 
+
+      {/* Start Button Component */}
+      <StartButton nextSequence={nextSequence} isStarted={isStarted} setIsStarted={setIsStarted} />
     </div>
   );
 }
