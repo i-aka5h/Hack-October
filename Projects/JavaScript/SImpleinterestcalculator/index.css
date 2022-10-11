@@ -1,0 +1,111 @@
+body {
+    background-color: black;
+    font-family: sans-serif;
+    padding: 60px 20px;
+  }
+  .box {
+    font-weight: 550;
+    background-color: rgb(255, 255, 255);
+    margin: auto;
+    margin-top: 2%;
+    padding: 2% 2% 2% 2%;
+    max-width: 70%;
+    max-height: none;
+    border-radius: 40px;
+  }
+  h1 {
+    color: rgb(133, 133, 133);
+    padding-left: 2%;
+    font-size: 58px;
+  }
+  .amount {
+    margin: auto;
+    text-align: left;
+    margin-left: 25%;
+    font-size: 155%;
+  }
+  .amount_value {
+    margin-left: 107px;
+    border-radius: 100px;
+    font-size: 165%;
+  }
+  #principal {
+    font-family: sans-serif;
+    font-weight: 550;
+    border-radius: 3px;
+    font-size: 38%;
+    padding: 5px 0px 0px 5px;
+  }
+  .range-slider {
+    margin: auto;
+    text-align: left;
+    margin-left: 25%;
+    padding-top: 20px;
+    font-size: 145%;
+  }
+  #decrement{
+    width: 24px;
+    font-size: 15px;
+    border-width: 2px;
+    font-weight: 550;
+  }
+  #increment{
+    font-weight: 550;
+    font-size: 13px;
+    border-width: 2px;
+  
+  }
+  .range_value {
+    padding-left: 60px;
+  }
+  .range-slider__range {
+    width: 107px;
+  }
+  #slider_value {
+    color: black;
+  }
+  .year {
+    display: inline-block;
+    margin: auto;
+    text-align: left;
+    margin-left: 25%;
+    padding-top: 25px;
+    font-size: 145%;
+  }
+  .year_value {
+    display: inline-block;
+    margin: auto;
+    text-align: left;
+    margin-left: 72px;
+    padding-top: 22px;
+    font-size: larger;
+  }
+  #years {
+    font-family: sans-serif;
+    font-weight: 350px;
+    font-size: 75%;
+    border-width: 2px;
+  }
+  .button {
+    margin: auto;
+    text-align: left;
+    margin-left: 25%;
+    padding-top: 30px;
+  }
+  #compute_button {
+    font-family: sans-serif;
+    font-weight: 550;
+    font-size: 115%;
+  }
+  pre {
+    padding-left: 25%;
+    font-family: sans-serif;
+    font-size: 125%;
+  }
+  footer {
+    padding-top: 2%;
+    padding-left: 2%;
+    box-sizing: border-box;
+    font-size: 165%;
+    font-weight: 550;
+  }
