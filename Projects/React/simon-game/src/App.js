@@ -3,6 +3,7 @@ import { useEffect, useState } from "react"
 
 // App Imports...
 import Heading from "./components/Heading";
+import BoxContainer from "./components/BoxContainer";
 
 // App
 function App() {
@@ -11,11 +12,6 @@ function App() {
   const [level, setLevel] = useState(0);
   const [heading, setHeading] = useState(`Press Start to start the Game`);
   const [isStarted, setIsStarted] = useState(false)
-
-
-
-
-
 
 
 
@@ -35,6 +31,8 @@ function App() {
   return (
     <div className={`w-full h-[100vh] bg-[#011F3F] text-center`}>
       <Heading level={level} heading={heading} />
+
+      <BoxContainer  />
     </div>
   );
 }
