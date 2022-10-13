@@ -32,5 +32,5 @@ This is a good project for beginners to get some hands-on experience
 ## Contributers
 
 <a href = "https://github.com/Tanu-N-Prabhu/Python/graphs/contributors">
-  <img src = "https://contrib.rocks/image?repo = dhawal-793/Hack-October"/>
+  <img src = "https://contrib.rocks/image?repo = i-aka5h/Hack-October"/>
 </a>
