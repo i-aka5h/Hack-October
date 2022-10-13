@@ -1,0 +1,45 @@
+body {
+    background: radial-gradient(#b60000, #ffff, #e5e5e5);
+}
+
+.card {
+    width: 20rem;
+    height: max-content;
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Lexend+Deca:wght@300;500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Patua+One&display=swap');
+.card:hover {
+    box-shadow: 5px 10px 20px 1px rgba(0, 0, 0, 0.253) !important;
+}
+
+.card-body {
+    padding: 5rem 0 !important;
+}
+
+.card-text {
+    font-size: 8;
+    padding: 0.4rem 1.9rem;
+}
+
+.container-fluid.row {
+    padding-top: 6rem;
+}
+
+.overflow {
+    overflow: hidden;
+}
+
+.card-img-top {
+    transform: scale(1);
+    transition: transform 0.7s ease;
+}
+
+.card-img-top:hover {
+    transform: scale(1.8);
+}
+
+.col-md-4 {
+    font-size: 1rem;
+    font-family: 'Lexend Deca', sans-serif;
+}

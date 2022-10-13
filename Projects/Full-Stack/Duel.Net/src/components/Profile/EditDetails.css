@@ -1,0 +1,94 @@
+.spidey {
+    display: inline;
+}
+
+.mcont {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr;
+}
+
+.cont1 {
+    grid-column-start: 1;
+    grid-column-end: 1;
+    grid-row-start: 1;
+}
+
+.editbg {
+    grid-column-start: 1;
+    grid-row-start: 1;
+    z-index: 1;
+    margin-left: 29%;
+    margin-top: 18%;
+    width: 51%;
+}
+
+.rexa {
+    margin-left: 28%;
+}
+
+input {
+    font-size: large;
+}
+
+.abs {
+    padding-top: 2%;
+    display: flex;
+    flex-direction: column;
+}
+
+.segg {
+    width: 150%;
+}
+
+.butt {
+    background-color: rgb(196, 50, 201);
+    
+}
+
+.display {
+    display: flex;
+    align-items: center;
+    width: 100%;
+}
+
+.texthover {
+    color: rgb(245, 75, 245);
+}
+
+.bholder {
+    padding-left: 220px;
+    padding-top: 18px;
+}
+
+.pass {
+    padding-left: 92px;
+    padding-top: 18px;
+}
+
+.containerpro {
+    border-radius: 25px;
+    background-color: rgb(20, 20, 20);
+    border-color: blueviolet;
+    border-width: 13px;
+    border-style: solid;
+    width: 761px;
+    padding-left: 51px;
+    padding-top: 69px;
+    z-index: 1;
+}
+#deluser{
+    background-color: red;
+    width: 50%;
+    align-self: center;
+    margin-bottom: 5%;
+
+
+}
+#deluserpass{
+    width: 75%;
+    align-self: center;
+    margin-bottom: 5%;
+    padding-bottom: 2%;
+    
+}
