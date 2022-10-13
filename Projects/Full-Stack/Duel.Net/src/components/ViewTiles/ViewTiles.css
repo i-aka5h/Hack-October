@@ -1,0 +1,30 @@
+    .cerd {
+        min-width: 40vw;
+        background-color: rgb(12, 12, 12);
+        /* padding-left: 20%; */
+        border-radius: 15px;
+        border-color: blueviolet;
+        border-width: 10px;
+        border-style: solid;
+    }
+    
+    .bracket {
+        display: flex;
+        flex-direction: row;
+    }
+    
+    .text {
+        padding-left: 20px;
+        padding-right: 100px;
+        padding-top: 12px;
+        color: white;
+    }
+    
+    .timage {
+        height: 295px;
+        width: 435px;
+    }
+    
+    #del {
+        background-color: #ca0d00
+    }

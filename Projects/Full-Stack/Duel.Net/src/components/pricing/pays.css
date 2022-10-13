@@ -1,0 +1,25 @@
+.mcontainer {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr;
+}
+
+.wet {
+    grid-column-start: 1;
+    grid-column-end: 1;
+    grid-row-start: 1;
+}
+
+.bthome {
+    grid-column-start: 1;
+    grid-row-start: 1;
+    z-index: 1;
+    margin-left: -27%;
+    margin-top: 120%;
+    width: 141%;
+}
+
+.record {
+    width: 100%;
+    height: 70px;
+}

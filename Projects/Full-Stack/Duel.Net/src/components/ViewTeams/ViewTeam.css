@@ -1,0 +1,22 @@
+.sbox {
+    overflow-y: scroll;
+    height: 600px;
+    width: 1000px;
+    background-color: #212529;
+    color: white;
+}
+
+ul {
+    list-style-type: none;
+    padding: 0;
+    border: 1px solid rgba(103, 88, 129, 0.589);
+}
+
+ul li {
+    padding: 8px 16px;
+    border-bottom: 0px solid rgba(103, 88, 129, 0.589);
+}
+
+ul li:last-child {
+    border-bottom: none
+}
