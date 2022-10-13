@@ -1,0 +1,38 @@
+body {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+.navbar {
+    padding-top: 15px;
+    padding-bottom: 15px;
+    border: 0;
+    border-radius: 0;
+    margin-bottom: 0;
+    font-size: 12px;
+    letter-spacing: 5px;
+}
+.navbar-nav  li a:hover {
+    color: #1abc9c !important;
+}
+
+footer{
+    text-align: center;
+    bottom: 0;
+    height: 60px;
+    margin-top: auto;
+    background-color: #1abc9c;}
+
+.fParagraph {
+	margin-top: 25px;
+	font-size: 12px;
+    color: #fff;
+}
+
+.btnx{
+    border-style: dotted;
+    margin-top: -5px;
+    color: #1ABC9C;
+    accent-color:  #F8F8F8;
+    
+}
