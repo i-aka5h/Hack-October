@@ -1,0 +1,36 @@
+.cerd {
+    min-width: 40vw;
+    background-color: rgb(223, 160, 207);
+    /* padding-left: 20%; */
+    border-radius: 15px;
+    border-color: blueviolet;
+    border-width: 10px;
+    border-style: solid;
+    margin-bottom: 10px;
+    flex-direction: column;
+    align-items: flex-start;
+    display: grid;
+}
+
+p {
+    font-size: 1.3rem;
+}
+
+.bracket {
+    display: flex;
+    flex-direction: row;
+}
+
+.text {
+    padding-left: 70px;
+    padding-right: 100px;
+    padding-top: 30px;
+}
+
+.timage {
+    object-fit: contain;
+}
+
+.but1 {
+    background-color: #43916d;
+}

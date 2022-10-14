@@ -1,0 +1,28 @@
+.mcont {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr;
+}
+
+.cont1 {
+    grid-column-start: 1;
+    grid-column-end: 1;
+    grid-row-start: 1;
+}
+
+.cont3 {
+    grid-column-start: 1;
+    grid-row-start: 1;
+    z-index: 1;
+    margin-left: 39%;
+    margin-top: 10%;
+    width: 51%;
+}
+
+form {
+    height: 10%;
+}
+.swal-text{
+    color: darkgrey;
+    font-size: 22px;
+}  

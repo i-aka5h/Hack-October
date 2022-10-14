@@ -1,0 +1,64 @@
+.containerdis {
+    display: flex;
+    width: auto;
+    justify-content: space-between;
+    align-items: center;
+    margin: 4%;
+    background: black;
+}
+
+.userpic {
+    width: auto;
+    height: auto;
+}
+
+.nandr {
+    display: flex;
+    align-items: flex-end;
+}
+
+.abdesc {
+    margin: 15%;
+    width: 100%;
+    color: aliceblue;
+}
+
+.abdescc {
+    color: aliceblue;
+    width: 85%;
+}
+
+.contentinlist {
+    display: flex;
+    border: 1px solid rgba(103, 88, 129, 0.589);
+    width: 16%;
+}
+
+.words {
+    width: 100%;
+}
+
+.wordsc {
+    width: 93%;
+}
+
+.rat {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    margin: 5%;
+}
+
+.rat2 {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    margin: 5%;
+}
+
+.rat3 {
+    display: flex;
+    align-items: center;
+    width: 75%;
+    margin: 5%;
+}
