@@ -1,9 +1,10 @@
-import React from 'react'
-
-const Footer = () => {
+import React from "react";
+function Footer() {
   return (
-    <div>Footer</div>
-  )
+    <footer className="bg-dark fixed-bottom text-center text-lg-mid text-light">
+      © {new Date().getFullYear()} Copyright: NewsPanda.com
+    </footer>
+  );
 }
 
-export default Footer
+export default Footer;
