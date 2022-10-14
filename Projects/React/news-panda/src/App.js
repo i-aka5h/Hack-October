@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import './App.css';
 import LoadingBar from "react-top-loading-bar";
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
