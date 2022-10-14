@@ -37,6 +37,9 @@ const News = ({ API_KEY, country, pagesize, category, updateProgress }) => {
       setLoading(false);
     }
     console.log(totalResults);
+    if (totalResults!==0&& category === "sports") {
+      setTotalResults((PrevResult)=>PrevResult-1)
+    }
     updateProgress(100);
   };
 
@@ -56,6 +59,9 @@ const News = ({ API_KEY, country, pagesize, category, updateProgress }) => {
     let parsedData = await data.json();
     setArticles(articles.concat(parsedData.articles));
     setTotalResults(parsedData.totalResults);
+    if (totalResults!==0&& category === "sports") {
+      setTotalResults((PrevResult)=>PrevResult-1)
+    }
     setLoading(false);
   };
 
