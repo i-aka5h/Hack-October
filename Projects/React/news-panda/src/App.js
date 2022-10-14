@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import LoadingBar from "react-top-loading-bar";
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
@@ -47,20 +47,23 @@ function App() {
       category: "technology"
     }
   ]
-  const API_KEY = process.env.NEWS_API;
+  const API_KEY = process.env.NEWS_PANDA_API;
   const pageSize = 9;
   const country = "in";//India
   const [query, setQuery] = useState("");
   const [progress, setProgress] = useState(0);
-
+const [queryPath, setQueryPath] = useState("")
   const updateProgress = (rprogress) => {
     setProgress(rprogress);
   };
+useEffect(() => {
+  setQueryPath(`/search/${query}`)
+}, [query])
 
 
   return (
     <Router>
-      <Navbar title="NewsPanda" />
+      <Navbar title="NewsPanda"/>
       <LoadingBar color="rgb(170,201,235)" height="3px" progress={progress} />
 
       <div className="container py-5"></div>
@@ -71,7 +74,8 @@ function App() {
       <Routes>
         <Route
           exact
-          path="/search/:query"
+          path={queryPath}
+          key={query}
           element={
             <SearchNews
               API_KEY={API_KEY}
@@ -104,7 +108,6 @@ function App() {
         })}
 
         <Route exact path="/about" element={<About />} />
-
       </Routes>
       <Footer />
     </Router>
