@@ -1,0 +1,77 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Yantramanav:wght@900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Questrial&family=Reem+Kufi:wght@700&display=swap');
+.login {
+    text-align: center;
+    font-family: 'Reem Kufi', sans-serif;
+    font-size: 2em;
+    color: blueviolet;
+    z-index: 1;
+}
+
+.login>input {
+    border-radius: 8px;
+    border: 2px solid #000000;
+    outline: none;
+    color: #000000;
+    margin: 0.5rem 0;
+    padding: 0.5rem 0.75rem;
+    width: 92%;
+    font-size: 1rem;
+    background: #e8daf0;
+    font-family: 'Roboto', sans-serif;
+}
+
+.login>.button {
+    background: #9944ca;
+    border: 1px solid #19023d;
+    color: rgb(255, 255, 255);
+    font-family: 'Reem Kufi', sans-serif;
+    font-size: 1.0rem;
+    padding: 0.5rem;
+    margin: 0.5rem 0;
+    border-radius: 8px;
+    outline: none;
+    cursor: pointer;
+    width: 40%;
+    display: flex;
+    justify-content: center;
+    margin: auto;
+}
+
+.hot {
+    display: flex;
+    align-items: flex-end;
+    padding-left: 10px;
+    margin-bottom: 25px;
+}
+
+.inputb {
+    border-radius: 8px;
+    border: 2px solid #000000;
+    outline: none;
+    color: #000000;
+    margin: 0.5rem 0;
+    padding: 0.5rem 0.75rem;
+    width: 92%;
+    font-size: 1rem;
+    background: #e8daf0;
+    font-family: 'Roboto', sans-serif;
+}
+
+.icon {
+    padding-left: 10px;
+}
+
+h1 {
+    font-size: 4rem;
+}
+.swal-modal{
+    background-color: white;
+}
+.swal-text{
+    color: black;
+    font-size: 22px;
+}  

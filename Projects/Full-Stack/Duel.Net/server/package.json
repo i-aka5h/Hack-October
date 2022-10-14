@@ -1,0 +1,25 @@
+{
+  "name": "dual-net-backend",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  
+  "scripts": {
+    "server": "nodemon index.js",
+    "start":"nodemon index.js"
+    
+    
+
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^4.17.1",
+    "mongoose": "^6.0.5",
+    "node-sass": "^6.0.1",
+    "node-valorant-api": "^0.5.0",
+    "nodemon": "^2.0.12",
+    "seeding": "^1.0.1"
+  }
+}
