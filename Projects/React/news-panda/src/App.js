@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import './App.css';
+import LoadingBar from "react-top-loading-bar";
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
 import News from "./components/News";
@@ -51,12 +52,18 @@ function App() {
   const pageSize = 9;
   const country = "in";//India
   const [query, setQuery] = useState("");
+  const [progress, setProgress] = useState(0);
 
+  const updateProgress = (rprogress) => {
+    setProgress(rprogress);
+  };
 
 
   return (
     <Router>
       <Navbar title="NewsPanda" />
+      <LoadingBar color="rgb(170,201,235)" height="3px" progress={progress} />
+
       <div className="container py-5"></div>
       <SearchInput
         query={query}
@@ -73,6 +80,7 @@ function App() {
               pagesize={pageSize}
               query={query}
               setQuery={setQuery}
+              updateProgress={updateProgress}
             />
           }
         />
@@ -89,6 +97,7 @@ function App() {
                   category={news.category}
                   country={country}
                   pageSize={pageSize}
+                  updateProgress={updateProgress}
                 />
               }
             />
