@@ -66,7 +66,7 @@ const Navbar = ({ title }) => {
             {
               newsTypes.map((newsType) => {
                 return (
-                  <li className="nav-item">
+                  <li className="nav-item" key={newsType.path}>
                     <Link className={`nav-link ${location.pathname === newsType.path ? "active" : ""}`} to={newsType.path}>
                       {newsType.name}
                     </Link>
