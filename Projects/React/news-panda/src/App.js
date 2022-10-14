@@ -23,27 +23,27 @@ function App() {
     },
     {
       key: "business",
-      path: "business",
+      path: "/business",
       category: "business"
     },
     {
       key: "entertainment",
-      path: "entertainment",
+      path: "/entertainment",
       category: "entertainment"
     },
     {
       key: "health",
-      path: "health",
+      path: "/health",
       category: "health"
     },
     {
       key: "science",
-      path: "science",
+      path: "/science",
       category: "science"
     },
     {
       key: "technology",
-      path: "technology",
+      path: "/technology",
       category: "technology"
     }
   ]
@@ -52,18 +52,15 @@ function App() {
   const country = "in";//India
   const [query, setQuery] = useState("");
 
-  const handleQuery = (event) => {
-    setQuery(event.target.value);
-  };
-
 
 
   return (
     <Router>
-      <Navbar />
+      <Navbar title="NewsPanda" />
+      <div className="container py-5"></div>
       <SearchInput
         query={query}
-        handleQuery={handleQuery}
+        setQuery={setQuery}
       />
       <Routes>
         <Route
@@ -75,7 +72,7 @@ function App() {
               key="search"
               pagesize={pageSize}
               query={query}
-              handleQuery={handleQuery}
+              setQuery={setQuery}
             />
           }
         />
@@ -84,6 +81,7 @@ function App() {
           return (
             <Route exact
               path={news.path}
+              key={news.key}
               element={
                 <News
                   API_KEY={API_KEY}
