@@ -1,0 +1,11 @@
+{
+  "name": "task-manager",
+  "version": "1.0.0",
+  "description": "Simple Task Management CLI Application",
+  "scripts": {
+    "task":"g++ task.cpp -o task",
+    "start":"npm run task & .\\task"
+  },
+  "author": "Dhawal Vijayvargiya",
+  "license": "ISC"
+}
