@@ -12,14 +12,20 @@ void Help();
 
 int main(int arg, char *args[])
 {
-    cout << "arg: " << arg << endl;
-    if(arg<2){
+    if (arg < 2)
         Help();
+    else
+    {
+        string work = args[1];
+        if (work == "help")
+        {
+            cout << "help" << endl;
+        }
+        else
+        {
+            cout << "add" << endl;
+        }
     }
-    cout << "args: " << endl;
-    for (int i = 1; i < arg; i++)
-        cout << "arg" << i << ": " << args[i] << endl;
-
     return 0;
 }
 
@@ -36,6 +42,7 @@ void Help()
     cout << "$ ./task report               # Statistics\n";
 }
 
-void Add(int priority, string task_to_do){
-    
+void Add(int priority, string task_to_do)
+{
+    cout << "Inside Add Method" << endl;
 }
