@@ -5,6 +5,7 @@
 using namespace std;
 
 void Help();
+void List();
 void Add(int, string);
 void CommandNotFound(string error = "")
 {
@@ -14,6 +15,11 @@ void CommandNotFound(string error = "")
         errormsg = "Error: Command not Found \n";
         errormsg += "> Please make sure to follow correct format => \"./task add [PRIORITY] [\"YOUR TASK\"]\"\n";
         errormsg += "> Nothing added!\n";
+    }
+    if (error == "ls")
+    {
+        errormsg = "Error: Command not Found \n";
+        errormsg += "> Please make sure to follow correct format => \"./task ls\n";
     }
 
     else
@@ -34,6 +40,8 @@ int main(int arg, char *args[])
         string work = args[1];
         if (work == "help")
             arg == 2 ? Help() : CommandNotFound();
+        if (work == "ls")
+            arg == 2 ? List() : CommandNotFound("ls");
         else if (work == "add")
         {
             if (arg == 4)
@@ -104,28 +112,28 @@ void Add(int priority, string task_to_do)
                     continue;
                 }
                 else
-                {                               // If prority if current task is greater than older task then
+                { // If prority if current task is greater than older task then
                     int ind = 0;
-                    int last_char = old_text.find('.');                            // find index of '.'
-                    string line_index = old_text.substr(0, last_char);             // make substring from positon 0 to position of '.'
+                    int last_char = old_text.find('.');                // find index of '.'
+                    string line_index = old_text.substr(0, last_char); // make substring from positon 0 to position of '.'
                     stringstream z(line_index);
-                    z >> ind;                                                      // convert it  integer
-                    new_text = new_text + to_string(ind) + ". " + task_to_do + " [" + to_string(priority) + "]\n";  // add current task to new text with priority and index
-                    added = true;                                                 // Update added as true
-                    old_text = old_text.substr(last_char);                        // get the text after . to the line end
-                    new_text = new_text + to_string(++ind) + old_text + "\n";   // add the old text to the next string 
-                    next_index = ++ind ;                                         // Update the index to index+2 as two line added to new text
+                    z >> ind;                                                                                      // convert it  integer
+                    new_text = new_text + to_string(ind) + ". " + task_to_do + " [" + to_string(priority) + "]\n"; // add current task to new text with priority and index
+                    added = true;                                                                                  // Update added as true
+                    old_text = old_text.substr(last_char);                                                         // get the text after . to the line end
+                    new_text = new_text + to_string(++ind) + old_text + "\n";                                      // add the old text to the next string
+                    next_index = ++ind;                                                                            // Update the index to index+2 as two line added to new text
                 }
             }
             else
-            { 
-                int pos = old_text.find('.');                                  // Find position of '.'
-                old_text = old_text.substr(pos);                               //  Create a substring  from position to line end
-                new_text += to_string(next_index) + old_text + "\n";           // add the old text to new text with index
-                next_index++;                                                  // Increment the index
+            {
+                int pos = old_text.find('.');                        // Find position of '.'
+                old_text = old_text.substr(pos);                     //  Create a substring  from position to line end
+                new_text += to_string(next_index) + old_text + "\n"; // add the old text to new text with index
+                next_index++;                                        // Increment the index
             }
         }
-        ofstream out;                                                         // Create an object for rewriting the file tasks.txt
+        ofstream out; // Create an object for rewriting the file tasks.txt
         out.open("tasks.txt");
         // If task is added =>
         if (added)
@@ -148,16 +156,37 @@ void Add(int priority, string task_to_do)
             // print success message with tahe added task
             cout << "Added task: \"" + task_to_do + "\" with priority " + to_string(priority);
         }
-        out.close();    // remove the output object
-    } 
+        out.close(); // remove the output object
+    }
     else // The file is empty, so add the task directly into the file
     {
-        ofstream out;                                    // Create an object for rewriting the file tasks.txt
-        out.open("tasks.txt");                                                  
-        string val = old_value + to_string(index) + ". " + task_to_do + " [" + to_string(priority) + "]";    // create a variable and add task with index and priority
-        out << val;                                                                                         // update the tasks.txt  with the variable
-        cout << "Added task: \"" + task_to_do + "\" with priority " + to_string(priority);                  // Print success message with task and priority
-        out.close();                                                                                        // remove the output object
+        ofstream out; // Create an object for rewriting the file tasks.txt
+        out.open("tasks.txt");
+        string val = old_value + to_string(index) + ". " + task_to_do + " [" + to_string(priority) + "]"; // create a variable and add task with index and priority
+        out << val;                                                                                       // update the tasks.txt  with the variable
+        cout << "Added task: \"" + task_to_do + "\" with priority " + to_string(priority);                // Print success message with task and priority
+        out.close();                                                                                      // remove the output object
     }
-    in.close();        // remove the input object
+    in.close(); // remove the input object
+}
+
+// --- List Method ---
+void List()
+{
+    ifstream in;          // Create input object
+    in.open("tasks.txt"); // open tasks.txt file
+    string st;
+    getline(in, st);                                   //  get first line in st variable
+    if (st == "")                                      // If it is empty then there are no tasks
+        cout << "There are no pending tasks!" << endl; // print message with no pending tasks
+    else
+    {
+        cout << st << "\n";   // print first task
+        while (in.eof() == 0) // Loop until file ends
+        {
+            getline(in, st);    // get each line
+            cout << st << "\n"; // print the task on current line
+        }
+    }
+    in.close(); // Remove input object
 }
