@@ -73,14 +73,16 @@ public class SudokuSolver {
 
         // check for occurance of the number in same row
         for (int k = 0; k < 9; k++) {
-            if (sudoku[i][k] == option)
+            if (sudoku[i][k] == option) {
                 return false;
+            }
         }
 
         // check for occurance of the number in same column
         for (int k = 0; k < 9; k++) {
-            if (sudoku[k][j] == option)
+            if (sudoku[k][j] == option) {
                 return false;
+            }
         }
 
         // check for occurance of the number in same 3x3 grid
@@ -89,8 +91,9 @@ public class SudokuSolver {
 
         for (int row = 0; row < 3; row++) {
             for (int col = 0; col < 3; col++) {
-                if (sudoku[rowStart + row][colStart + col] == option)
+                if (sudoku[rowStart + row][colStart + col] == option) {
                     return false;
+                }
             }
         }
 

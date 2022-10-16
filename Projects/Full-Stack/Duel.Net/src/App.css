@@ -1,0 +1,68 @@
+.App {
+    display: flex;
+    width: 100vw;
+    height: fit-content;
+    font-size: 1.5em;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Reem Kufi', sans-serif;
+    color: blueviolet;
+}
+
+.spacer {
+    aspect-ratio: 300/50;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    background: #100e11;
+    width: 100%;
+    z-index: 9;
+}
+
+.mcontainer {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr;
+}
+
+.mainsc {
+    grid-column-start: 1;
+    grid-column-end: 1;
+    grid-row-start: 1;
+    z-index: 1;
+}
+
+.wet {
+    grid-column-start: 1;
+    grid-row-start: 1;
+}
+
+.nope {
+    transform: rotate(180deg);
+}
+
+img {
+    width: 100%;
+}
+
+.bottomsvg {
+    z-index: -1;
+}
+
+.video {
+    width: 100vw;
+    height: 100vh;
+}
+.swal-overlay {
+    background-color: rgba(103, 88, 129, 0.589);
+    
+  }
+  .swal-modal {
+    background-color: #212529;
+    border: 3px solid blueviolet;
+    
+  }
+  .swal-text{
+      color: darkgrey;
+      font-size: 22px;
+  }  

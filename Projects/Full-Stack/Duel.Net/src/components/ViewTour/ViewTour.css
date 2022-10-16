@@ -1,0 +1,82 @@
+.seedscr{
+    width: 1cm;
+   
+    
+
+}
+.seed{
+    width: 5cm;
+}
+
+.ss{
+    padding-top: 1cm;
+}
+
+.grp1{
+
+    position: fixed;
+    top: 10%;
+    left: 0%;
+    z-index: 999;
+    width: 100%;
+  
+ 
+   
+
+}
+.grp2{
+    position: fixed;
+    top: 25%;
+    left: 20%;
+    z-index: 999;
+    width: 100%;
+
+}
+.grpf{
+    position: fixed;
+    top: 16%;
+    left: 40%;
+    z-index: 999;
+    width: 100%;
+
+}
+.grpf h4{
+    color: gold;
+    
+}
+
+.grp3{
+    position: fixed;
+    top: 25%;
+    left: 60%;
+    z-index: 999;
+    width: 100%;
+
+}
+
+.grp4{
+
+    position: fixed;
+    top: 10%;
+    left: 80%;
+    z-index: 999;
+    width: 100%;
+  
+ 
+   
+
+}
+.bgg{
+    position: fixed;
+    top:80%;
+    right: 50%;
+
+}
+.bg{
+    position: fixed;
+    top:90%;
+    right: 50%;
+
+}
+
+

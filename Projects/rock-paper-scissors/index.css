@@ -1,0 +1,75 @@
+body{
+    background-color: black
+}
+.header-img img{
+    width: 98vw;
+    height: 50vh;
+margin: auto;
+align-items: center;
+}
+@media only screen and (max-width: 600px) {
+    .header-img img{
+    width: 98vw;
+    height: 25vh;
+}
+}
+.container{
+margin-top: 5rem;
+background-color: black;
+}
+.box{
+
+    display: flex;
+    flex-direction: column;
+    background-color: rgba(7, 7, 7, 0.37);
+    width: fit-content;
+    padding: 4rem;
+    margin: auto;
+    border-radius: 15px;
+    color:white;
+    text-align: center;
+}
+.btn-container{
+    display: inline;
+
+}
+.btn-container img{
+    width: 4rem;
+
+}
+.button{
+    background-color: white;
+    border: 1px solid transparent;
+    margin: 0.5rem;
+    width: fit-content;
+    padding: 0.1rem;
+    border-radius: 10px;
+    font-size: larger;
+    font-weight: 540;
+}
+.button:hover{
+ background-color: rgba(239, 243, 20, 0.938);
+ cursor: pointer;
+}
+
+.red{
+    color: rgba(255, 81, 0, 0.952);
+    font-weight: bold;
+}
+.yellow{
+    color:yellow;
+    font-weight: bold;
+}
+.green{
+    color: green;
+    font-size: xx-large;
+    font-weight: bold;
+}
+.sycontainer {
+border: 1px solid transparent;
+
+}
+.sycontainer img{
+    width: 100vw;
+    
+ }

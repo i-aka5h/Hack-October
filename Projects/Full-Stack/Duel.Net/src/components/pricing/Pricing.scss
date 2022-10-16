@@ -1,0 +1,121 @@
+@import url(https://fonts.googleapis.com/css?family=Open+Sans:400,600);
+// mixins
+// scottnix.com/placement-of-media-queries/
+@mixin breakpoint($point) {
+    @if $point==medium {
+        @media (min-width: 30em) {
+            @content;
+        }
+    }
+    @else if $point==large {
+        @media (min-width: 50em) {
+            @content;
+        }
+    }
+    @else if $point {
+        // allows custom breakpoints
+        @media (min-width: $point) {
+            @content;
+        }
+    }
+}
+
+// variables
+$background: #54585f;
+$header-color: #f9f9f9;
+$body-color: #ffffff;
+$body-color-secondary: #292b2e;
+$accent-color: #64AAA4;
+*,
+*:before,
+*:after {}
+
+body {
+    background: rgb(246, 248, 248);
+    font-size: 100%;
+}
+
+.promos {
+    max-width: 1140px;
+    margin: 0 auto;
+}
+
+.promo {
+    margin: 1em .5em 1.625em;
+    padding: .25em 0 2em;
+    background: $background;
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 400;
+    line-height: 1.625;
+    color: $header-color;
+    text-align: center;
+    @include breakpoint(40em) {
+        display: inline;
+        float: left;
+        width: 33.333%;
+        margin: 1em 0 0;
+        &.first {
+            border-right: none;
+        }
+        &.second {
+            float: right;
+            border-left: none;
+        }
+    }
+    h4 {
+        margin: .25em 0 0;
+        font-size: 170%;
+        font-weight: normal;
+    }
+    .features {
+        margin: 0;
+        padding: 0;
+        list-style-type: none;
+        color: $body-color;
+    }
+    li {
+        padding: .25em 0;
+        font-size: 1.1rem;
+        width: 364px;
+    }
+    .brief {
+        color: $header-color;
+    }
+    .price {
+        margin: .5em 0;
+        padding: .25em 0;
+        background: $body-color-secondary;
+        font-size: 250%;
+        color: $header-color;
+    }
+    .buy {
+        margin: 1em 0 0;
+    }
+    button {
+        padding: 1em 3.25em;
+        border: none;
+        border-radius: 40px;
+        background: $body-color-secondary;
+        color: $header-color;
+        cursor: pointer;
+        &:hover {
+            background: darken($body-color-secondary, 1%);
+        }
+    }
+}
+
+.scale {
+    button {
+        background: $accent-color;
+        &:hover {
+            background: darken($accent-color, 10%);
+        }
+    }
+    @include breakpoint(40em) {
+        transform: scale(1.2);
+        box-shadow: 0 0 4px 1px rgba(20, 20, 20, 0.8);
+        .price {
+            color: $accent-color;
+        }
+    }
+}
