@@ -36,3 +36,6 @@ void Help()
     cout << "$ ./task report               # Statistics\n";
 }
 
+void Add(int priority, string task_to_do){
+    
+}
