@@ -1,4 +1,7 @@
 #include <iostream>
+#include <windows.h>
+
+#define CP_UTF8 65001
 
 using namespace std;
 
