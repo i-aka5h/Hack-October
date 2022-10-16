@@ -1,4 +1,7 @@
 #include <iostream>
+#include <sstream>
+#include <fstream>
+#include <string>
 #include <windows.h>
 
 #define CP_UTF8 65001
@@ -20,7 +23,7 @@ int main(int arg, char *args[])
     return 0;
 }
 
-
+// Help Function...
 void Help()
 {
 
@@ -32,3 +35,4 @@ void Help()
     cout << "$ ./task help                 # Show usage\n";
     cout << "$ ./task report               # Statistics\n";
 }
+
