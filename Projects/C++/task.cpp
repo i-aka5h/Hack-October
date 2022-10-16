@@ -29,6 +29,12 @@ int main(int arg, char *args[])
     return 0;
 }
 
+void CommandNotFound(){
+    cout << "Error: Please Enter a Valid Command!!" << endl;
+    cout << "See the list of commands here :" << endl;
+    Help();
+}
+
 // Help Function...
 void Help()
 {
