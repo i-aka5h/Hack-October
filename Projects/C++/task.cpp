@@ -1,14 +1,29 @@
-#include <iostream>
-#include <sstream>
-#include <fstream>
-#include <string>
-#include <windows.h>
+#include <bits/stdc++.h>
 
 #define CP_UTF8 65001
 
 using namespace std;
 
 void Help();
+void Add(int, string);
+void CommandNotFound(string error = "")
+{
+    string errormsg = "";
+    if (error == "add")
+    {
+        errormsg = "Error: Command not Found \n";
+        errormsg += "> Please make sure to follow correct format => \"./task add [PRIORITY] [\"YOUR TASK\"]\"\n";
+        errormsg += "> Nothing added!\n";
+    }
+
+    else
+    {
+        errormsg = "Error: Please Enter a Valid Command!!\n";
+    }
+
+    cout << errormsg << "> See the list of commands here :" << endl;
+    Help();
+}
 
 int main(int arg, char *args[])
 {
@@ -18,24 +33,33 @@ int main(int arg, char *args[])
     {
         string work = args[1];
         if (work == "help")
+            arg == 2 ? Help() : CommandNotFound();
+        else if (work == "add")
         {
-            cout << "help" << endl;
+            if (arg == 4)
+            {
+                int priority = 0;
+                string pr = (args[2]);
+                stringstream x(pr);
+                x >> priority;
+                string task_to_do = args[3];
+                Add(priority, task_to_do);
+            }
+            else
+            {
+                CommandNotFound("add");
+            }
         }
         else
         {
-            cout << "add" << endl;
+            CommandNotFound();
         }
     }
     return 0;
 }
 
-void CommandNotFound(){
-    cout << "Error: Please Enter a Valid Command!!" << endl;
-    cout << "See the list of commands here :" << endl;
-    Help();
-}
 
-// Help Function...
+// --- Help Method ---
 void Help()
 {
 
@@ -48,7 +72,10 @@ void Help()
     cout << "$ ./task report               # Statistics\n";
 }
 
+// --- Add Method ---
 void Add(int priority, string task_to_do)
 {
     cout << "Inside Add Method" << endl;
+    cout << "Task => " << task_to_do << endl;
+    cout << "Priority => " << priority << endl;
 }
