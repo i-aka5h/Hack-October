@@ -1,0 +1,381 @@
+*{
+    font-family: 'Times New Roman', Times, serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    outline: none;
+    border: none;
+    text-transform: capitalize ;
+    transition: all 0.2s linear;
+    -webkit-transition: all 0.7s;
+    -moz-transition: all 0.7s;
+    transition: all 0.7s;
+
+
+    
+}
+
+
+
+
+
+
+
+
+
+*::selection{
+    background: rgb(175, 132, 22) ;
+    color: honeydew;
+}
+
+html{
+    font-size: 70%;
+    overflow-x: hidden;
+}
+
+
+body{
+    background: #111;
+    overflow-x: hidden;
+    padding-left: 35rem;
+   
+
+}
+section{
+    min-height: 100vh;
+    padding: 1rem;
+}
+.button{
+    padding: 0.8rem 3rem;
+    background: #333;
+    color: #fff;
+    cursor: pointer;
+    margin-top: 1rem;
+    font-size: 2rem;
+    border: 1px solid rgb(158, 120, 23);
+    border-radius: 5rem;
+}
+.button:hover{
+    background: rgb(158, 120, 23);
+
+}
+.heading{
+    text-align: center;
+    margin: 0 4rem;
+    font-size: 5rem;
+    padding: 1rem;  
+    border-bottom: .1rem solid #fff4;
+    color: #fff;
+}
+.heading span{
+    color: rgb(175, 132, 22);
+}
+
+header{
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 30rem;
+    background: #1a1a1a;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-flow: column;
+    text-align: center;
+    
+}
+header .user img{
+    height: 15rem;
+    width: 15rem;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 1rem;
+    border: 0.7rem solid rgb(175, 132, 22) ;
+}
+
+header .user img:hover{
+    border: 0.7rem solid silver;
+    transform: scale(1.2);
+}
+
+header .user .name{
+    font-size: 2.5rem;
+    color: whitesmoke;
+}
+
+header .user .post{
+    font-size: 1.5rem;
+    color: whitesmoke;
+}
+header .nav-bar{
+    width: 100%;
+}
+
+header .nav-bar ul{
+    list-style: none;
+    padding: 1rem 3rem;
+
+}
+
+header .nav-bar ul li a{
+    display: block;
+    padding: 1rem;
+    margin: 1.5rem ;
+    background: #333;
+    color:#fff;
+    font-size: 2rem;
+    border-radius: 5rem;
+}
+header .nav-bar ul li a:hover{
+    background: rgb(175, 132, 22);
+}
+
+
+#menu{
+    position: fixed;
+    top: 2rem;
+    right: 2rem;
+    background: #333;
+    color: #fff;
+    cursor: pointer;
+    font-size: 2.5rem;
+    padding: 1rem 1.5rem;
+    z-index: 1000;
+    display: none;
+}
+
+.home{
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
+    padding: 0rem 1.5rem;
+}
+.home h3{
+    font-size: 2.5rem;
+    color: rgb(175, 132, 22);
+    opacity: 0;
+}
+
+.home h1{
+    font-size: 5rem;
+    color: #fff;
+    opacity: 0;
+}
+.home h1 span{
+    color: rgb(175, 132, 22);
+}
+
+.home .bio{
+    font-size: 1.5rem;
+    text-align: justify;
+    justify-content: center;
+    color: #fff;
+    padding: 1rem 0; 
+    max-height: 650vh;
+    opacity: 0;
+
+}
+.home .show{
+    opacity: 1;
+}
+
+
+
+.about .row{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    padding: 1rem 0;
+}
+
+
+.about .row .info{
+    flex: 1 1 30rem;
+    padding: 2rem 1rem;
+    padding-left: 6rem;
+}
+.about .row .info h3{
+    font-size: 2rem;
+    color: #fff;
+    padding: 1rem 0 ;
+    font-weight: normal;
+
+}
+.about .row .info h3 span{
+    color: rgb(175, 132, 22);
+    padding-left: 0 0.5rem;
+}    
+
+
+
+
+.about .row .counter{
+    flex: 1 1 30rem;
+    padding: 2rem 1rem;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.about .row .counter .box{
+    width: 20rem;
+    font-size: 1rem;
+    background: #222;
+    text-align: center;
+    padding: 1.8rem;
+    margin: 2rem;
+    border: 0.1rem solid rgb(175, 132, 22);
+    border-radius: 5rem;
+    color: #fff;
+}
+
+
+.about .row .counter .box span{
+    font-size: 2rem;
+    color: rgb(175, 132, 22);
+}
+
+.education .box-container{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    padding:1rem 0;
+    padding-left: 3rem;
+}
+
+
+.education .box-container .box{
+    width:30rem;
+    margin:4rem 1rem;
+    padding-left: 4rem;
+    border-left: .2rem solid rgb(175, 132, 22);
+    position: relative;
+}
+.education .box-container .box span{
+    font-size: 1.3rem;
+    background:#222;
+    color:#fff;
+    border-radius: 5rem;
+    padding:.5rem 2.5rem;
+}
+
+.education .box-container .box h3{
+    font-size: 2rem;
+    color: #fff;
+    padding-top: 1.5rem;
+}
+
+.education .box-container .box h4{
+    font-size: 2.5rem;
+    color: rgb(175, 132, 22);
+    padding-top: 1.5rem;
+}
+.education .box-container .box h4 span{
+    font-size: 1.5rem;
+    color: rgb(175, 132, 22);
+    border: none;
+    background: none;
+    padding: 0;
+}
+
+
+
+.contact .row{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.contact .row .content{
+    flex: 1 1 30rem;
+    padding: 4rem;
+    padding-top: 0;
+    padding-bottom: 0 ;
+}
+
+.contact .row .content .title{
+    text-transform: uppercase;
+    color: #fff;
+    font-size: 3rem;
+    padding-bottom: 2rem;
+
+}
+.contact .row .content .info h3{
+    display: flex;
+    align-items: center;
+    font-size: 1.5rem;
+    color: #eee;
+    padding: 1rem 0;
+    font-weight: normal;
+}
+.contact .row .content .info h3 span{
+    font-size: 2rem;
+    color: rgb(175, 132, 22) ;
+    padding: 0.5rem 1rem;
+    
+}
+
+
+
+.contact .row form{
+    flex: 1 1 45rem;
+    padding: 2rem;
+    margin: 2rem;
+    margin-bottom: 4rem ;
+}
+
+.contact .row form .box{
+
+    padding: 1.5rem;
+    margin: 1rem 0 ;
+    background: #3333;
+    color: #fff;
+    text-transform: none;
+    font-size:1.7rem  ;
+    width: 100%;
+}
+
+.contact .row form .box::placeholder{
+    text-transform: capitalize;
+}
+
+.contact .row form .message{
+    height: 15rem;
+    resize: none;
+
+}
+
+.contact .row form #error{
+    color: red; 
+    font-size: 1.7rem;
+    
+
+}
+
+.social img{
+
+    display: inline-block;
+    height: 15rem;
+    width: 15rem;
+    border-radius: 50%;
+    object-fit: cover;
+    margin: 2rem;
+    cursor: pointer;
+    overflow: hidden;
+}
+
+.social img:hover{
+    transform: scale(1.2);
+}
+
+.top{
+    position: fixed;
+    bottom: 4.5rem;
+    right: 4.5rem;
+    z-index: 100; 
+}
