@@ -1,21 +1,36 @@
-#include <bits/stdc++.h>
+#include <bits/stdc++.h> // Library to include everything
 
-#define CP_UTF8 65001
+#define CP_UTF8 65001 // defining a value which should not be changed
 
-using namespace std;
+using namespace std; // using namespace std
 
+// --- Method Declaration ---
 void Help();
 void List();
+void Report();
 void Add(int, string);
 void Delete(int);
 void Done(int);
+
+// --- CommandNotFound Method ---
 void CommandNotFound(string error = "")
 {
-    string errormsg = "";
-    if (error == "ls")
+    string errormsg = ""; // declare error message 
+    // setting up eror message according to the reciebved argument
+    if (error == "help")
+    {
+        errormsg = "Error: Command not Found \n";
+        errormsg += "> Please make sure to follow correct format => \"./task help\" or \"./task\"\n";
+    }
+    else if (error == "ls")
     {
         errormsg = "Error: Command not Found \n";
         errormsg += "> Please make sure to follow correct format => \"./task ls\"\n";
+    }
+    else if (error == "report")
+    {
+        errormsg = "Error: Command not Found \n";
+        errormsg += "> Please make sure to follow correct format => \"./task report\"\n";
     }
     else if (error == "add")
     {
@@ -36,29 +51,38 @@ void CommandNotFound(string error = "")
         errormsg += "> Nothing Marked Done!\n";
     }
     else
-    {
+    { // If no argument is provioded then
         errormsg = "Error: Please Enter a Valid Command!!\n";
     }
-
+    // Printing error message and calling the Help Method
     cout << errormsg << "> See the list of commands here :" << endl;
     Help();
 }
 
+// --- Main Method ---
 int main(int arg, char *args[])
 {
-    if (arg < 2)
+    if (arg < 2) // if arguments are less tan two then call the Help Function
         Help();
     else
     {
-        string work = args[1];
+        string work = args[1]; // take the first argument as the work variable
         if (work == "help")
-            arg == 2 ? Help() : CommandNotFound();
-        if (work == "ls")
+        { // if work == "help" and total arguments are 2 then call Help else call CommandNotFound with argument help
+            arg == 2 ? Help() : CommandNotFound("help");
+        }
+        else if (work == "ls")
+        { // if work == "ls" and total arguments are 2 then call List else call CommandNotFound with argument ls
             arg == 2 ? List() : CommandNotFound("ls");
+        }
+        else if (work == "report")
+        { // if work == "report" and total arguments are 2 then call Report else call CommandNotFound with argument report
+            arg == 2 ? Report() : CommandNotFound("report");
+        }
         else if (work == "add")
-        {
+        { // if work == "add" and total arguments are 4 then
             if (arg == 4)
-            {
+            { // get the priority and the task and call Add Method with required arguments
                 int priority = 0;
                 string pr = (args[2]);
                 stringstream x(pr);
@@ -66,37 +90,39 @@ int main(int arg, char *args[])
                 string task_to_do = args[3];
                 Add(priority, task_to_do);
             }
-            else
+            else // else call CommandNotFound with argument add
                 CommandNotFound("add");
         }
         else if (work == "del")
-        {
+        { // if work == "del" and total arguments are 3 then
             if (arg == 3)
-            {
+            { // get the index and call Delete Method with required arguments
                 int index = 0;
                 string ind = (args[2]);
                 stringstream x(ind);
                 x >> index;
                 Delete(index);
             }
-            else
+            else // else call CommandNotFound with argument add
                 CommandNotFound("del");
         }
         else if (work == "done")
-        {
+        { // if work == "done" and total arguments are 3 then
             if (arg == 3)
-            {
+            { // get the index and call Done Method with required arguments
                 int index = 0;
                 string ind = (args[2]);
                 stringstream x(ind);
                 x >> index;
                 Done(index);
             }
-            else
+            else // else call CommandNotFound with argument add
                 CommandNotFound("done");
         }
         else
+        { // else call CommandNotFound
             CommandNotFound();
+        }
     }
     return 0;
 }
@@ -249,16 +275,16 @@ void Delete(int index)
             found = true;          // Increment the line number
             line_no++;
         }
-        else //
+        else // line number > index
         {
-            int ind = 0;
-            int last_char = old_text.find('.');
-            string line_index = old_text.substr(0, last_char);
+            int ind = 0;                                       // create new ind variable for index
+            int last_char = old_text.find('.');                // find  index of '.'
+            string line_index = old_text.substr(0, last_char); // find index number using substring from 0 to position of '.'
             stringstream z(line_index);
-            z >> ind;
-            ind -= 1;
-            old_text = old_text.substr(last_char);
-            new_text = new_text + to_string(ind) + old_text + "\n";
+            z >> ind;                                               // convert to string
+            ind -= 1;                                               // decrement the index by one
+            old_text = old_text.substr(last_char);                  // get text after the '.'
+            new_text = new_text + to_string(ind) + old_text + "\n"; // append it to new+text with index calculated in previous step and task
         }
     }
     if (found) // If found then
@@ -329,3 +355,43 @@ void Done(int index)
         cout << "Error: Invalid Index\n> No Pending Task available with given Index.\n> Nothing Marked Done."; // print error message wit
     in.close();                                                                                                // Remove the Output Object
 }
+
+// --- Report Method ---
+void Report()
+{
+    ifstream in1, in2;                                                 // create two input object
+    in1.open("tasks.txt");                                             // tasks.txt
+    in2.open("completed_tasks.txt");                                   // open completed_tasks.txt
+    string pending_text, completed_text, pending = "", completed = ""; // create variable for pending tasks, completed tasks, pending and completed
+    int pending_line_no = 0, complete_line_no = 0;                     // set line numbers for completed  and pending tasks
+    getline(in1, pending_text);                                        // get first line of tasks in pending_text variable
+    if (pending_text != "")                                            // if pending_ext is not empty
+    {
+        in1.seekg(0);          // point the pointer to first character of first line
+        while (in1.eof() == 0) // loop until file ends
+        {
+            ++pending_line_no;              // increment the line number
+            getline(in1, pending_text);     // get the current line text in pending_text variable
+            pending += pending_text + "\n"; // append the pending_text to pending and add a newline character
+        }
+    }
+    cout << "Pending : " << to_string(pending_line_no) << endl; // print total number of pending tasks
+    cout << pending << endl;                                    // in next line print pending variable
+    in1.close();                                                // remove the input 1 object
+    getline(in2, completed_text);                               // get firstline of completed tasks.
+    if (completed_text != "")                                   // if completed_text is not empty then
+    {
+        in2.seekg(0);          // point the pointer to first character of first line
+        while (in2.eof() == 0) // loop until file ends
+        {
+            ++complete_line_no;                 // increment the line number
+            getline(in2, completed_text);       // get the current line text in completed_text variable
+            completed += completed_text + "\n"; // append the completed_text to completed and add a newline character
+        }
+    }
+    cout << "Completed : " << to_string(complete_line_no) << endl; // print total number of completed tasks
+    cout << completed << endl;                                     // in next line print completed variable
+    in2.close();                                                   // close the input object 2
+}
+
+// --- End of File ---
