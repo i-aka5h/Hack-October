@@ -7,6 +7,7 @@ using namespace std;
 void Help();
 void List();
 void Add(int, string);
+void Delete(int);
 void CommandNotFound(string error = "")
 {
     string errormsg = "";
@@ -16,12 +17,16 @@ void CommandNotFound(string error = "")
         errormsg += "> Please make sure to follow correct format => \"./task add [PRIORITY] [\"YOUR TASK\"]\"\n";
         errormsg += "> Nothing added!\n";
     }
-    if (error == "ls")
+    else if (error == "ls")
     {
         errormsg = "Error: Command not Found \n";
-        errormsg += "> Please make sure to follow correct format => \"./task ls\n";
+        errormsg += "> Please make sure to follow correct format => \"./task ls\"\n";
     }
-
+    else if (error == "del")
+    {
+        errormsg = "Error: Command not Found \n";
+        errormsg += "> Please make sure to follow correct format => \"./task del [INDEX]\"\n";
+    }
     else
     {
         errormsg = "Error: Please Enter a Valid Command!!\n";
@@ -56,10 +61,21 @@ int main(int arg, char *args[])
             else
                 CommandNotFound("add");
         }
-        else
+        else if (work == "del")
         {
-            CommandNotFound();
+            if (arg == 3)
+            {
+                int index = 0;
+                string ind = (args[2]);
+                stringstream x(ind);
+                x >> index;
+                Delete(index);
+            }
+            else
+                CommandNotFound("del");
         }
+        else
+            CommandNotFound();
     }
     return 0;
 }
@@ -75,6 +91,27 @@ void Help()
     cout << "$ ./task done INDEX           # Mark the incomplete item with the given index as complete\n";
     cout << "$ ./task help                 # Show usage\n";
     cout << "$ ./task report               # Statistics\n";
+}
+
+// --- List Method ---
+void List()
+{
+    ifstream in;          // Create input object
+    in.open("tasks.txt"); // open tasks.txt file
+    string st;
+    getline(in, st);                                   //  get first line in st variable
+    if (st == "")                                      // If it is empty then there are no tasks
+        cout << "There are no pending tasks!" << endl; // print message with no pending tasks
+    else
+    {
+        cout << st << "\n";   // print first task
+        while (in.eof() == 0) // Loop until file ends
+        {
+            getline(in, st);    // get each line
+            cout << st << "\n"; // print the task on current line
+        }
+    }
+    in.close(); // Remove input object
 }
 
 // --- Add Method ---
@@ -170,23 +207,50 @@ void Add(int priority, string task_to_do)
     in.close(); // remove the input object
 }
 
-// --- List Method ---
-void List()
+//  --- Delete Method ---
+void Delete(int index)
 {
-    ifstream in;          // Create input object
-    in.open("tasks.txt"); // open tasks.txt file
-    string st;
-    getline(in, st);                                   //  get first line in st variable
-    if (st == "")                                      // If it is empty then there are no tasks
-        cout << "There are no pending tasks!" << endl; // print message with no pending tasks
-    else
+    int line_no = 1;      // define line variable
+    ifstream in;          // create input object
+    in.open("tasks.txt"); // Open tasks.txt
+    string old_text, new_text = "";
+    bool found = false;
+    while (in.eof() == 0) // Loop until not reach to the end of the file
     {
-        cout << st << "\n";   // print first task
-        while (in.eof() == 0) // Loop until file ends
+        getline(in, old_text); // get the current line
+        if (line_no < index)   // if line number < index then
         {
-            getline(in, st);    // get each line
-            cout << st << "\n"; // print the task on current line
+            new_text += old_text + "\n"; // add this line to new_text with new line character
+            line_no++;                   // Increment line number
+        }
+        else if (line_no == index) // If line number == index
+        {                          // set found == true
+            found = true;          // Increment the line number
+            line_no++;
+        }
+        else //
+        {
+            int ind = 0;
+            int last_char = old_text.find('.');
+            string line_index = old_text.substr(0, last_char);
+            stringstream z(line_index);
+            z >> ind;
+            ind -= 1;
+            old_text = old_text.substr(last_char);
+            new_text = new_text + to_string(ind) + old_text + "\n";
         }
     }
-    in.close(); // Remove input object
+    if (found) // If found then
+    {
+        ofstream out;                  // Create output object
+        out.open("tasks.txt");         // open tasks.txt
+        int x = new_text.length() - 1; // remove last character  from new_text
+        new_text = new_text.substr(0, x);
+        out << new_text;                             // Update the content in file to new_text
+        cout << "Deleted task #" + to_string(index); // Print duccess message with task index
+        out.close();                                 // remove output object
+    }
+    else                                                                                             // If not found prints error message with the index given
+        cout << "Error: Invalid Index\n> Task with given Index does not exist.\n> Nothing deleted."; //
+    in.close();                                                                                      // Remove input object
 }
