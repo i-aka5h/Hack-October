@@ -8,24 +8,32 @@ void Help();
 void List();
 void Add(int, string);
 void Delete(int);
+void Done(int);
 void CommandNotFound(string error = "")
 {
     string errormsg = "";
-    if (error == "add")
-    {
-        errormsg = "Error: Command not Found \n";
-        errormsg += "> Please make sure to follow correct format => \"./task add [PRIORITY] [\"YOUR TASK\"]\"\n";
-        errormsg += "> Nothing added!\n";
-    }
-    else if (error == "ls")
+    if (error == "ls")
     {
         errormsg = "Error: Command not Found \n";
         errormsg += "> Please make sure to follow correct format => \"./task ls\"\n";
+    }
+    else if (error == "add")
+    {
+        errormsg = "Error: Command not Found \n";
+        errormsg += "> Please make sure to follow correct format => \"./task add [PRIORITY] [\"YOUR TASK\"]\"\n";
+        errormsg += "> Nothing Added!\n";
     }
     else if (error == "del")
     {
         errormsg = "Error: Command not Found \n";
         errormsg += "> Please make sure to follow correct format => \"./task del [INDEX]\"\n";
+        errormsg += "> Nothing Deleted!\n";
+    }
+    else if (error == "done")
+    {
+        errormsg = "Error: Command not Found \n";
+        errormsg += "> Please make sure to follow correct format => \"./task done [INDEX]\"\n";
+        errormsg += "> Nothing Marked Done!\n";
     }
     else
     {
@@ -73,6 +81,19 @@ int main(int arg, char *args[])
             }
             else
                 CommandNotFound("del");
+        }
+        else if (work == "done")
+        {
+            if (arg == 3)
+            {
+                int index = 0;
+                string ind = (args[2]);
+                stringstream x(ind);
+                x >> index;
+                Done(index);
+            }
+            else
+                CommandNotFound("done");
         }
         else
             CommandNotFound();
@@ -253,4 +274,58 @@ void Delete(int index)
     else                                                                                             // If not found prints error message with the index given
         cout << "Error: Invalid Index\n> Task with given Index does not exist.\n> Nothing deleted."; //
     in.close();                                                                                      // Remove input object
+}
+
+// --- Done Method ---
+void Done(int index)
+{
+    int line_no = 1;                // Set line to 1
+    ifstream in;                    // cerate a input object
+    in.open("tasks.txt");           // open tasks.txt
+    string old_text, new_text = ""; // define old text, and new text variables
+    bool found = false;             // define found =false
+    while (in.eof() == 0)           // loop until end of the file
+    {
+        getline(in, old_text); // get first line of file
+        if (line_no < index)   // if line number < index then
+        {
+            new_text += old_text + "\n"; // ad dline text to next line
+            line_no++;                   // increment the line number
+        }
+        else if (line_no == index) // if line number == index then
+        {
+            int x = old_text.length() - 7;                       // define x = length of line -7
+            string task = old_text.substr(3, x);                 // define task = substring of old_text form 3 to x
+            ofstream compfile;                                   // create compfile object to write
+            compfile.open("completed_tasks.txt", ios_base::app); // open completed .txt
+            compfile << task;                                    // add the task to end of the file
+            found = true;                                        // set found = true
+            line_no++;                                           // increment line_number
+            compfile.close();                                    // remove output object
+        }
+        else
+        {
+            int ind = 0;                                            // set index to zero
+            int last_char = old_text.find('.');                     // set last character position to position of '.'
+            string line_index = old_text.substr(0, last_char);      // get the previous index
+            stringstream z(line_index);                             // convert into integer
+            z >> ind;                                               // transfer value to index variable
+            ind -= 1;                                               // decrement index by 1;
+            old_text = old_text.substr(last_char);                  // get the text of the line
+            new_text = new_text + to_string(ind) + old_text + "\n"; //  append  old text with index to the new_text
+        }
+    }
+    if (found) // If found
+    {
+        ofstream out;                  // create output object
+        out.open("tasks.txt");         // open tasks.txt
+        int x = new_text.length() - 1; // remove last character from new_text
+        new_text = new_text.substr(0, x);
+        out << new_text;                                      // write new_textto output object
+        cout << "Task with id #" << index << " Marked Done."; // print success message with index
+        out.close();                                          // remove output object
+    }
+    else                                                                                                       // If not found
+        cout << "Error: Invalid Index\n> No Pending Task available with given Index.\n> Nothing Marked Done."; // print error message wit
+    in.close();                                                                                                // Remove the Output Object
 }
