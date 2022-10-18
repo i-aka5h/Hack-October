@@ -1,0 +1,117 @@
+-<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  margin: 0;
+}
+
+html {
+  box-sizing: border-box;
+}
+
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
+.column {
+  float: left;
+  width: 34.3%;
+  margin-bottom: 16px;
+  padding: 0 8px;
+}
+
+.card {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  margin: 8px;
+}
+
+.about-section {
+  padding: 50px;
+  text-align: center;
+  background-color: #474e5d;
+  color: white;
+}
+
+.container {
+  padding: 0 16px;
+}
+
+.container::after, .row::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+
+.title {
+  color: grey;
+}
+
+.button {
+  border: none;
+  outline: 0;
+  display: inline-block;
+  padding: 8px;
+  color: white;
+  background-color: #000;
+  text-align: center;
+  cursor: pointer;
+  width: 100%;
+}
+
+.button:hover {
+  background-color: #555;
+}
+
+@media screen and (max-width: 650px) {
+  .column {
+    width: 100%;
+    display: block;
+  }
+}
+</style>
+</head>
+<body>
+
+<div class="about-section">
+  <h1> ABOUT US </h1>
+  <p>This is our About Us Page.</p>
+  <p>This is just an example page for website.</p>
+</div>
+
+<h2 style="text-align:center">Contributors</h2>
+<div class="row">
+  <div class="column">
+    <div class="card">
+      <img src="22.jpg" alt="anime" style="width:100%">
+      <div class="container">
+        <h2>Shubh Goel</h2>
+        <p class="title">Coder & Learner</p>
+        <p>I am a student at ABES Engineering College.</p>
+        <p>shubhxx@gmail.com</p>
+        <button onclick="myFunction()">Link of GitHub Repository</button>
+
+<script>
+function myFunction() {
+  location.replace("https://github.com/i-aka5h/Hack-October/")
+}
+</script><br>
+<br>
+
+        <a href="https://instagram.com/shubh.goel03/">
+            <img class="instagram" src="/Hack-October/Portfolio/img/instagram-logo-svg-vector-for-print.svg" alt="instagram" ></a>
+        <a href="https://www.linkedin.com/in/shubh-goel-447174245/">
+        <img src="/Hack-October/Portfolio/img/linked in logo.png" alt="linkedin"></a>
+
+      </div>
+    </div>
+  </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+</body>
+</html>
