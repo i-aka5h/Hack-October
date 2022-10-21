@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Places_Activity.activity_places_Rock">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="310dp"
+            android:src="@drawable/rock"
+            android:scaleType="fitXY"
+            android:layout_gravity="center_horizontal"/>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="#000"
+            />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            >
+
+            <ImageView
+                android:id="@+id/call_icon_image"
+                android:layout_width="135dp"
+                android:layout_height="50dp"
+                android:adjustViewBounds="true"
+                android:maxHeight="10dp"
+                android:scaleType="centerInside"
+                android:src="@drawable/phone_call"
+                android:paddingLeft="10dp"
+                android:paddingTop="10dp"/>
+
+            <ImageView
+                android:id="@+id/web_search_image"
+                android:layout_width="135dp"
+                android:layout_height="50dp"
+                android:layout_toRightOf="@+id/call_icon_image"
+                android:src="@drawable/web_search"
+                android:scaleType="centerInside"
+                android:adjustViewBounds="true"
+                android:paddingTop="10dp"/>
+
+            <ImageView
+                android:id="@+id/google_map_search_image"
+                android:layout_width="135dp"
+                android:layout_height="50dp"
+                android:scaleType="centerInside"
+                android:adjustViewBounds="true"
+                android:paddingTop="10dp"
+                android:src="@drawable/map_icon"
+                />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Summary :-"
+                android:paddingTop="20dp"
+                android:paddingLeft="5dp"
+                android:textColor="#000"
+                android:textStyle="normal"
+                android:textSize="25sp"
+                android:textAllCaps="true"
+                />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="10dp"
+ android:text="No trip to Chandigarh is ever complete without a visit to the renowned Rock Garden. Whether you are in the city with family and friends or on business, take some time out and make your way to this unique place. It’s a sculpture garden, where you can see tens of gorgeous figurines made of nothing but rock and stuff that we call ‘waste’. Every corner of this garden is a piece of art, and whether you are an art aficionado or not, this place will turn you into one by the time you leave the site.
+\n\nTimings: 9:00 am to 7:30 pm (April to September); \n9:00 am to 6:00 pm (October to March)
+\n\nEntry Fee: ₹ 10 (Children); ₹ 20 (Adults)
+\n\nNearest Bus Stop: Rock Garden (450 metres)\n\n"
+                android:layout_marginTop="10dp"
+                android:textSize="18sp"
+                />
+
+        </LinearLayout>
+
+
+    </LinearLayout>
+
+</ScrollView>
