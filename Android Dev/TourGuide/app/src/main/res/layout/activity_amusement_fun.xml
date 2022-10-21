@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Amusement_Activity.activity_amusement_Fun">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="310dp"
+            android:src="@drawable/fun"
+            android:scaleType="fitXY"
+            android:layout_gravity="center_horizontal"/>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="#000"
+            />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            >
+
+            <ImageView
+                android:id="@+id/call_icon_image"
+                android:layout_width="135dp"
+                android:layout_height="50dp"
+                android:adjustViewBounds="true"
+                android:maxHeight="10dp"
+                android:scaleType="centerInside"
+                android:src="@drawable/phone_call"
+                android:paddingLeft="10dp"
+                android:paddingTop="10dp"/>
+
+            <ImageView
+                android:id="@+id/web_search_image"
+                android:layout_width="135dp"
+                android:layout_height="50dp"
+                android:layout_toRightOf="@+id/call_icon_image"
+                android:src="@drawable/web_search"
+                android:scaleType="centerInside"
+                android:adjustViewBounds="true"
+                android:paddingTop="10dp"/>
+
+            <ImageView
+                android:id="@+id/google_map_search_image"
+                android:layout_width="135dp"
+                android:layout_height="50dp"
+                android:scaleType="centerInside"
+                android:adjustViewBounds="true"
+                android:paddingTop="10dp"
+                android:src="@drawable/map_icon"
+                />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Summary :-"
+                android:paddingTop="20dp"
+                android:paddingLeft="5dp"
+                android:textColor="#000"
+                android:textStyle="normal"
+                android:textSize="25sp"
+                android:textAllCaps="true"
+                />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="10dp"
+                android:fontFamily="@font/aclonica"
+                android:text="Located on the Chandigarh Kalka Road, Aqua Village is situated 25 kms from Chandigarh and is a relatively new water cum amusement park in the city. Boasting of an array of thrilling water and regular rides, this park is only open in the summer season and is a favourite hang out place for the city folks.\n\n\n"
+                android:layout_marginTop="10dp"
+                android:textSize="18sp"
+                />
+
+        </LinearLayout>
+
+
+    </LinearLayout>
+
+</ScrollView>

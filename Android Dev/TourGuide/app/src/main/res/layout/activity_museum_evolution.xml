@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Museum_Activity.activity_museum_Evolution">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="310dp"
+            android:src="@drawable/evoltion"
+            android:scaleType="fitXY"
+            android:layout_gravity="center_horizontal"/>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="#000"
+            />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            >
+
+            <ImageView
+                android:id="@+id/call_icon_image"
+                android:layout_width="135dp"
+                android:layout_height="50dp"
+                android:adjustViewBounds="true"
+                android:maxHeight="10dp"
+                android:scaleType="centerInside"
+                android:src="@drawable/phone_call"
+                android:paddingLeft="10dp"
+                android:paddingTop="10dp"/>
+
+            <ImageView
+                android:id="@+id/web_search_image"
+                android:layout_width="135dp"
+                android:layout_height="50dp"
+                android:layout_toRightOf="@+id/call_icon_image"
+                android:src="@drawable/web_search"
+                android:scaleType="centerInside"
+                android:adjustViewBounds="true"
+                android:paddingTop="10dp"/>
+
+            <ImageView
+                android:id="@+id/google_map_search_image"
+                android:layout_width="135dp"
+                android:layout_height="50dp"
+                android:scaleType="centerInside"
+                android:adjustViewBounds="true"
+                android:paddingTop="10dp"
+                android:src="@drawable/map_icon"
+                />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Summary :-"
+                android:paddingTop="20dp"
+                android:paddingLeft="5dp"
+                android:textColor="#000"
+                android:textStyle="normal"
+                android:textSize="25sp"
+                android:textAllCaps="true"
+                />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="10dp"
+                android:text="Showcasing the evolutionary roadmap of human lives, this museum has galleries on Astronomy, Archaeology, Pre-historic and Geology presented with scientific and technical display and complete with reference libraries.\n\n\n"
+                android:layout_marginTop="10dp"
+                android:textSize="18sp"
+                />
+
+        </LinearLayout>
+
+
+    </LinearLayout>
+
+</ScrollView>

@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Restaurant_Activity.activity_restaurant_Lalit">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="310dp"
+            android:layout_gravity="center_horizontal"
+            android:scaleType="fitXY"
+            android:src="@drawable/lalitres" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="#000" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:id="@+id/call_icon_image"
+                android:layout_width="135dp"
+                android:layout_height="50dp"
+                android:adjustViewBounds="true"
+                android:maxHeight="10dp"
+                android:paddingLeft="10dp"
+                android:paddingTop="10dp"
+                android:scaleType="centerInside"
+                android:src="@drawable/phone_call" />
+
+            <ImageView
+                android:id="@+id/web_search_image"
+                android:layout_width="135dp"
+                android:layout_height="50dp"
+                android:layout_toRightOf="@+id/call_icon_image"
+                android:adjustViewBounds="true"
+                android:paddingTop="10dp"
+                android:scaleType="centerInside"
+                android:src="@drawable/web_search" />
+
+            <ImageView
+                android:id="@+id/google_map_search_image"
+                android:layout_width="135dp"
+                android:layout_height="50dp"
+                android:adjustViewBounds="true"
+                android:paddingTop="10dp"
+                android:scaleType="centerInside"
+                android:src="@drawable/map_icon" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingLeft="5dp"
+                android:paddingTop="20dp"
+                android:text="Summary :-"
+                android:textAllCaps="true"
+                android:textColor="#000"
+                android:textSize="25sp"
+                android:textStyle="normal" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:padding="10dp"
+                android:text="SERVES THE CHOICEST SCHEZWAN CUISINE LUNCH ONWARDS. Black Lotus, the Chinese speciality restaurant, serves the best, most authentic Schezwan cuisine. Come to the best Chinese restaurant in Chandigarh for the best Chinese cuisine in the city. The elegant space is sectioned into a split-level restaurant, a cosy private dining room and a glitzy bar, along with an all new poolside alfresco. A high ceiling, fabric panelled walls and exquisite Oriental objet d’art creates a contemporary Oriental ambience. The menu features a wide range of exotic vegetarian and non-vegetarian delicacies including fresh seafood. Enjoy your meal with a glass of the finest spirits from across the world, along with our delicious starters and a vast main course menu that will leave you spoilt for choice. At Black Lotus, enjoy everyone’s favourite cuisine in its best form."
+                android:textSize="18sp"/>
+        </LinearLayout>
+
+
+    </LinearLayout>
+
+</ScrollView>
