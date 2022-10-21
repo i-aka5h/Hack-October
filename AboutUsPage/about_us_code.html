@@ -1,116 +1,390 @@
--<!DOCTYPE html>
-<html>
+<!DOCTYPE html>
 <head>
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<style>
-body {
-  font-family: Arial, Helvetica, sans-serif;
-  margin: 0;
-}
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <style>
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      margin: 0;
+      background-color: #000;
+    }
 
-html {
+    /* html {
   box-sizing: border-box;
-}
+} */
 
-*, *:before, *:after {
+    /* *, *:before, *:after {
   box-sizing: inherit;
-}
+} */
 
-.column {
+    /* .column {
   float: left;
   width: 34.3%;
   margin-bottom: 16px;
   padding: 0 8px;
-}
+} */
 
-.card {
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
-  margin: 8px;
-}
+    .card {
+      box-shadow: 0 4px 10px 0 #474e5d;
+      margin: 40px;
+      background-color: rgb(161, 227, 227);
+      border-radius: 10px;
+      padding: 5px 16px;
+    }
 
-.about-section {
-  padding: 50px;
-  text-align: center;
-  background-color: #474e5d;
-  color: white;
-}
+    .about-section {
+      padding: 30px;
+      text-align: center;
+      background-color: #474e5d;
+      color: white;
+    }
 
-.container {
-  padding: 0 16px;
-}
-
-.container::after, .row::after {
+    .about {
+      line-height: 15px;
+    }
+    /* 
+    .container {
+      padding: 0 16px;
+    } */
+    .contri a {
+      color: rgb(161, 227, 227);
+      text-decoration: none;
+    }
+    .contri a:hover {
+      text-decoration: underline;
+    }
+    /* .container::after, .row::after {
   content: "";
   clear: both;
   display: table;
-}
+} */
 
-.title {
-  color: grey;
-}
+    .title {
+      color: grey;
+    }
+    .title:hover {
+      color: #000;
+    }
 
-.button {
-  border: none;
-  outline: 0;
-  display: inline-block;
-  padding: 8px;
-  color: white;
-  background-color: #000;
-  text-align: center;
-  cursor: pointer;
-  width: 100%;
-}
+    button {
+      border: none;
+      outline: 0;
+      display: inline-block;
+      padding: 8px;
+      color: white;
+      background-color: #000;
+      text-align: center;
+      cursor: pointer;
+      width: 100%;
+      border-radius: 10px;
+    }
 
-.button:hover {
-  background-color: #555;
-}
+    button:hover {
+      background-color: #555;
+      padding: 10px;
+    }
 
-@media screen and (max-width: 650px) {
-  .column {
-    width: 100%;
-    display: block;
-  }
-}
-</style>
+    .imgs {
+      border-radius: 50px;
+    }
+
+    .imgh2 {
+      display: flex;
+      justify-content: space-between;
+    }
+    h2:hover {
+      color: #555;
+    }
+    #gloria {
+      border-radius: 100px;
+    }
+
+    footer {
+      background-color: #474e5d;
+      color: white;
+      padding: 50px;
+    }
+    @media screen and (max-width: 650px) {
+      .column {
+        width: 100%;
+        display: block;
+      }
+      .imgs{
+        width: 20%;
+        border-radius: 50px;
+      }
+    }
+
+    @media screen and (min-width: 801px) {
+      .profiles {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+      }
+
+      .card {
+        max-width: 500px;
+        margin: 20px;
+      }
+      .imgs{
+        width: 20%;
+        border-radius: 50px;
+      }
+      .about{
+      line-height: 15px;
+      font-size: medium;      
+    }
+    }
+  </style>
 </head>
 <body>
+  <div class="about-section">
+    <h1>ABOUT US</h1>
+    <p>This is our About Us Page.</p>
+    <p>This is just an example page for website.</p>
+  </div>
 
-<div class="about-section">
-  <h1> ABOUT US </h1>
-  <p>This is our About Us Page.</p>
-  <p>This is just an example page for website.</p>
-</div>
+  <h2 style="text-align: center" class="contri">
+    <a href="https://github.com/i-aka5h/Hack-October/">Contributors</a>
+  </h2>
 
-<h2 style="text-align:center">Contributors</h2>
-<div class="row">
-  <div class="column">
-    <div class="card">
-      <div class="container">
-        <h2>Shubh Goel</h2>
+  <div class="profiles">
+    <div class="profiles1">
+      <div class="card">
+        <div class="imgh2">
+          <img
+            class="imgs"
+            src="/Portfolio/img/profile.jpg"
+            alt="Goel"
+            width="30%"
+          />
+          <h2>Shubh Goel</h2>
+        </div>
         <p class="title">Coder & Learner</p>
-        <p>I am a student at ABES Engineering College.</p>
-        <p>shubhxx@gmail.com</p>
+        <div class="about">
+          <p>I am a student at ABES Engineering College.</p>
+          <p>shubhxx@gmail.com</p>
+        </div>
         <button onclick="myFunction()">Link of GitHub Repository</button>
 
-<script>
-function myFunction() {
-  location.replace("https://github.com/i-aka5h/Hack-October/")
-}
-</script><br>
-<br>
+        <script>
+          function myFunction() {
+            location.replace("https://github.com/i-aka5h/Hack-October/");
+          }
+        </script>
+        <br />
+        <br />
 
         <a href="https://instagram.com/shubh.goel03/">
-            <img class="instagram" src="/Hack-October/Portfolio/img/instagram-logo-svg-vector-for-print.svg" alt="instagram" ></a>
+          <img
+            class="instagram"
+            src="/Portfolio/img/instagram-logo-svg-vector-for-print.svg"
+            alt="instagram"
+            width="5%"
+        /></a>
         <a href="https://www.linkedin.com/in/shubh-goel-447174245/">
-        <img src="/Hack-October/Portfolio/img/linked in logo.png" alt="linkedin"></a>
+          <img
+            src="/Portfolio/img/linked in logo.png"
+            alt="linkedin"
+            width="5%"
+        /></a>
+      </div>
+      <div class="card">
+        <div class="imgh2">
+          <img
+            class="imgs"
+            src="/Portfolio/img/Kunal.jpg"
+            alt="Kunal"
+            width="30%"
+          />
+          <h2>Kunal Mehta</h2>
+        </div>
+        <p class="title">Coder & Learner</p>
+        <div class="about"><p>I am exploring the world of different technologies.</p>
+        <p>email@gmail.com</p></div>
+        <button onclick="myFunction()">Link of GitHub Repository</button>
 
+        <script>
+          function myFunction() {
+            location.replace("https://github.com/i-aka5h/Hack-October/");
+          }
+        </script>
+        <br />
+        <br />
+
+        <a href="https://instagram.com/shubh.goel03/">
+          <img
+            class="instagram"
+            src="/Portfolio/img/instagram-logo-svg-vector-for-print.svg"
+            alt="instagram"
+            width="5%"
+        /></a>
+        <a href="https://www.linkedin.com/in/shubh-goel-447174245/">
+          <img
+            src="/Portfolio/img/linked in logo.png"
+            alt="linkedin"
+            width="5%"
+        /></a>
+      </div>
+      </div>
+      <div class="profiles2">
+      <div class="card">
+        <div class="imgh2">
+          <img
+            class="imgs"
+            id="gloria"
+            src="/Portfolio/img/bestprofilepics copy.png"
+            alt="Gloria"
+            width="20%"
+          />
+          <h2>Gloria Okeke</h2>
+        </div>
+        <p class="title">Coder & Technical Content Writer</p>
+        <div class="about">
+          <p>I love writing about Cryptos and web3 at large.</p>
+          <p>okekeebubechukwu08@gmail.com</p>
+        </div>
+        <button onclick="myFunction()">Link of GitHub Repository</button>
+
+        <script>
+          function myFunction() {
+            location.replace("https://github.com/i-aka5h/Hack-October/");
+          }
+        </script>
+        <br />
+        <br />
+
+        <a href="https://instagram.com/shubh.goel03/">
+          <img
+            class="instagram"
+            src="/Portfolio/img/instagram-logo-svg-vector-for-print.svg"
+            alt="instagram"
+            width="5%"
+        /></a>
+        <a href="https://www.linkedin.com/in/gloria-okeke-e-j/">
+          <img
+            src="/Portfolio/img/linked in logo.png"
+            alt="linkedin"
+            width="5%"
+        /></a>
+    </div>
+      <div class="card">
+        <div class="imgh2">
+          <img
+            class="imgs"
+            src="/Portfolio/img/Sengar.jpg"
+            alt="Kunal"
+            width="30%"
+          />
+          <h2>Divya Sengar</h2>
+        </div>
+        <p class="title">Coder & Learner</p>
+        <div class="about"><p>I am exploring the world of different technologies.</p>
+        <p>email@gmail.com</p></div>
+        <button onclick="myFunction()">Link of GitHub Repository</button>
+
+        <script>
+          function myFunction() {
+            location.replace("https://github.com/i-aka5h/Hack-October/");
+          }
+        </script>
+        <br />
+        <br />
+
+        <a href="https://instagram.com/shubh.goel03/">
+          <img
+            class="instagram"
+            src="/Portfolio/img/instagram-logo-svg-vector-for-print.svg"
+            alt="instagram"
+            width="5%"
+        /></a>
+        <a href="https://www.linkedin.com/in/shubh-goel-447174245/">
+          <img
+            src="/Portfolio/img/linked in logo.png"
+            alt="linkedin"
+            width="5%"
+        /></a>
+      </div>
+      </div>
+      <div class="profiles3">
+      <div class="card">
+        <div class="imgh2">
+          <img
+            class="imgs"
+            src="/Portfolio/img/Shreejan.jpg"
+            alt="Kunal"
+            width="30%"
+          />
+          <h2>Shreejan</h2>
+        </div>
+        <p class="title">Coder & Learner</p>
+        <div class="about"><p>Currently improving my coding skills</p>
+        <p>email@gmail.com</p></div>
+        <button onclick="myFunction()">Link of GitHub Repository</button>
+
+        <script>
+          function myFunction() {
+            location.replace("https://github.com/i-aka5h/Hack-October/");
+          }
+        </script>
+        <br />
+        <br />
+
+        <a href="https://instagram.com/shubh.goel03/">
+          <img
+            class="instagram"
+            src="/Portfolio/img/instagram-logo-svg-vector-for-print.svg"
+            alt="instagram"
+            width="5%"
+        /></a>
+        <a href="https://www.linkedin.com/in/shubh-goel-447174245/">
+          <img
+            src="/Portfolio/img/linked in logo.png"
+            alt="linkedin"
+            width="5%"
+        /></a>
+      </div>
+      <div class="card">
+        <div class="imgh2">
+          <img
+            class="imgs"
+            src="/Portfolio/img/Geeky.jpg"
+            alt="Kunal"
+            width="30%"
+          />
+          <h2>Geeky Monk</h2>
+        </div>
+        <p class="title">Code Enthusiast</p>
+       <div class="about"> <p>I am exploring the world of different technologies.</p>
+      <p>email@gmail.com</p></div>
+        <button onclick="myFunction()">Link of GitHub Repository</button>
+
+        <script>
+          function myFunction() {
+            location.replace("https://github.com/i-aka5h/Hack-October/");
+          }
+        </script>
+        <br />
+        <br />
+
+        <a href="https://instagram.com/shubh.goel03/">
+          <img
+            class="instagram"
+            src="/Portfolio/img/instagram-logo-svg-vector-for-print.svg"
+            alt="instagram"
+            width="5%"
+        /></a>
+        <a href="https://www.linkedin.com/in/shubh-goel-447174245/">
+          <img
+            src="/Portfolio/img/linked in logo.png"
+            alt="linkedin"
+            width="5%"
+        /></a>
+      </div>
       </div>
     </div>
   </div>
-      </div>
-    </div>
-  </div>
-</div>
-
 </body>
-</html>
+<footer>
+  <h3>Thanks for reading about us.</h3>
+  <img src="/Portfolio/img/Line 3.png" alt="footerline" width="100%" />
+</footer>
