@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>survey form</title>
+<style>
+    body{
+        background-image:url(https://images.unsplash.com/photo-1450101499163-c8848c66ca85?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80);     
+    }
+    form {
+       background-color:darkgray;
+       text-align: center;
+       margin-left:400px;
+       margin-right: 400px;
+       padding:20px;
+       box-shadow:2px 5px 10px rgba(0,0,0,0.8) ;
+    }
+    h1{
+        background-color:darkgray ;
+        margin-left:600px;
+       margin-right: 600px;
+    
+       box-shadow:2px 5px 10px rgba(0,0,0,0.8) ;
+    }
+
+    </style>
+    <head>
+<body>
+     <h1 align="center">Survey Form</h1>
+   <form action="newform.html">
+        <label for="name"><b>Name:-</label>
+    <input type="text" placeholder="name"><br><br>
+    <label for="email">Email:-</label>
+    <input type="text" placeholder="email"><br><br>
+    <label for="age">Age(optional):-</label>
+    <input type="text" placeholder="age"><br><br>
+    <label for="role" >Which option best describes your current role?</label></b></label>
+    <select name="role" id="role">
+        <option value="student">Student</option>
+        <option value="Full time job">Full time job</option>
+        <option value="Full time learner">full time learner</option>
+        <option value="prefer not to say">Prefer not to say</option>
+        <option value="others">others</option>
+    </select><br><br>
+<label for="prefer"><b>Would you like to prefer technical training</b></label><br>
+<input type="radio" name="prefer" id="prefer" value="definitely">Definitely<br>
+<input type="radio" name="prefer" id="prefer" value="maybe">Maybe<br>
+<input type="radio" name="prefer" id="prefer" value="not sure">not sure<br><br>
+<label for="skills"><b>Languages known</b></label><br>
+<input type="checkbox" name="skills" id="skills">C<br>
+<input type="checkbox" name="skills" id="skills">C++<br>
+<input type="checkbox" name="skills" id="skills">python<br>
+<input type="checkbox" name="skills" id="skills">java<br>
+<input type="checkbox" name="skills" id="skills">javascript<br>
+<input type="checkbox" name="skills" id="skills">php<br><br>
+<label for="textarea"><b>Any query related to training:-</b></label>
+<input type="textarea" name="textarea" id="textarea"><br>
+<a href="http://127.0.0.1:5500/newform.html"><label for="submit"></label><br>
+<input type="submit" name="submit" id="submit"></a>
+</form>
+</body>
+</html>
