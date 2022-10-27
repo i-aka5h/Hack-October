@@ -1,0 +1,210 @@
+:root {
+    --main-bg: #201C51;
+    --lighter-bg: #54517f;
+    --main-fg: #C9C7E0;
+    --lightgray: #ccc;
+    --darkgray: #555;
+    --whitest: #fff;
+    --accent: #00B9FF;
+    --accent2: #FC615F;
+    --opposite: #BC2849;
+}
+
+body {
+    color: var(--main-fg);
+    font-family: 'Source Sans Pro', Helvetica, sans-serif;
+    font: normal 1.5em 'Source Sans Pro';
+    margin: auto;
+    background: var(--main-bg) url("img/bg.jpg") no-repeat center top;
+    background-attachment: fixed;
+    background-size: cover;
+}
+
+#content {
+    margin: auto;
+    max-width: 60%;
+    margin-top: 7em;
+}
+
+a,
+a:visited {
+    color: var(--accent2);
+}
+
+a:hover,
+a:active {
+    color: var(--whitest);
+}
+
+button,
+.bigButton {
+    outline: none;
+    border-radius: 2px;
+    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    background: none;
+    border: 1px solid var(--lightgray);
+    padding: 0.25em;
+    color: var(--lightgray);
+    font: 95% 'Source Sans Pro', Helvetica, sans-serif;
+    min-width: 5%;
+    transition: all 0.15s;
+}
+
+button:hover,
+.bigButton:hover {
+    background: var(--accent2);
+    color: var(--whitest);
+    border-color: var(--accent2);
+    cursor: pointer;
+}
+
+h1 {
+    color: var(--whitest);
+    text-align: center;
+    transition: transform .2s;
+    animation: bouncy 5s linear;
+    position: relative;
+}
+
+h2 {
+    color: var(--accent2);
+    text-align: center;
+    font-size: 1em;
+}
+
+h2 a {
+    padding-left: 10px;
+}
+
+#mainPanel {
+    display: flex;
+    margin: 1.5em, 0, 1em, 0;
+    text-align: center;
+}
+
+#mainPanel input {
+    flex: 2;
+    outline: none;
+    border-radius: 2px;
+    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    moz-box-sizing: border-box;
+    background: var(--whitest);
+    border: 1px solid var(--lightgray);
+    padding: 0.5em;
+    margin: 1px 10px 1px 10px;
+    color: var(--darkgray);
+    font: 95% 'Source Sans Pro', Helvetica, sans-serif;
+    height: 2em;
+    max-width: 70%;
+}
+
+#mainPanel input:focus {
+    box-shadow: 0 0 7px var(--accent);
+}
+
+.bigButton {
+    min-width: 15%;
+    height: 2em;
+    display: inline;
+    vertical-align: middle;
+    padding-top: 0.2em;
+}
+
+.bigButton .fas {
+    padding-top: 0.25em;
+}
+
+ul {
+    padding: 0;
+    list-style-type: none;
+    width: 100%;
+}
+
+li {
+    margin: 1em, 0, 1em, 0;
+    padding-bottom: 0;
+    display: flex;
+    padding-top: 10px;
+    border-top: 1px dashed var(--lighter-bg);
+    cursor: default;
+    transition: all 0.15s;
+}
+
+li:hover {
+    transform: scale(1.01);
+    background: rgba(255, 255, 255, 0.021);
+}
+
+li p:hover {
+    color: var(--whitest);
+}
+
+li p {
+    display: inline;
+    flex: 2;
+    padding: 2% 2% 2% 9%;
+    margin: 0;
+    vertical-align: middle;
+}
+
+li i {
+    font-size: 1.5em;
+    padding: 1%;
+    display: inline;
+    vertical-align: middle;
+    padding-right: 5px;
+    cursor: pointer;
+}
+
+li i:hover {
+    opacity: 1;
+}
+
+.deleteButton {
+    color: var(--opposite);
+    opacity: 0.7;
+}
+
+@keyframes bouncy {
+    0% {
+        top: 0em
+    }
+
+    40% {
+        top: 0em
+    }
+
+    43% {
+        top: -0.3em
+    }
+
+    46% {
+        top: 0em
+    }
+
+    48% {
+        top: -0.1em
+    }
+
+    50% {
+        top: 0em
+    }
+
+    100% {
+        top: 0em;
+    }
+}
+
+
+@media (max-width: 960px) {
+    .content {
+        max-width: 80%;
+    }
+
+    .bigButton .buttonText {
+        display: none;
+    }
+}
