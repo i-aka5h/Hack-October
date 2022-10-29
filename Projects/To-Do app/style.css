@@ -1,0 +1,129 @@
+
+  body {
+	background: #f9f9f9;
+	font-family: "Raleway", sans-serif;
+	color: #151515;
+	
+  }
+  
+  .container{
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	min-height: 100vh;
+	width:80%;
+	margin: 0 auto;
+  }
+  .heading {
+	color: black;
+	margin: 20px auto;
+	font-family: sans-serif;
+	letter-spacing: 0.3rem;
+	width: 100%;
+	font-weight: 800;
+	font-style: bold;
+	font-size: 30px;
+	text-align: center;
+  }
+  .todoListContainer button {
+	outline: none;
+	cursor: pointer;
+  }
+  .todoListContainer {
+	text-align: center;
+	background: #fff;
+	padding: 25px;
+	box-shadow: 0px 5px 10px 5px #0000000f;
+	
+	
+  }
+  #todoList {
+	text-align: left;
+	list-style-type: none;
+	margin: 0;
+	margin-top: 60px;
+	float: none;
+	padding: 0;
+	width: 100%;
+  }
+  @keyframes fadein {
+	from {
+	  background-color: #ffffab;
+	}
+	to {
+	  background-color: white;
+	}
+  }
+  #todoList li {
+	display: flex;
+	border: 0px;
+	border-left: 2px solid black;
+	padding: 10px;
+	margin: 5px auto;
+	clear: both;
+	transition: all 1.3s ease-in-out;
+	animation: fadein 1.3s ease-in-out;
+  }
+  
+  #todoList li p {
+	display: inline-block;
+	margin: 0;
+	letter-spacing: 0.1rem;
+	text-overflow: ellipsis !important;
+	overflow: hidden;
+	width: 75%;
+	font-weight: 600;
+	transition: all 0.3s ease;
+  }
+  
+  #todoList li button {
+	float: right;
+	margin: -5px 5px;
+	border-radius: 100%;
+	border: 0px solid transparent;
+	width: 25px;
+	height: 25px;
+	text-align:center;
+  }
+  #newTodo {
+	padding: 10px;
+	border-radius: 3px 0 0 3px;
+	border: 0px;
+	border-bottom: 1px solid #cecece;
+	width: 230px;
+	background-color: transparent;
+	float: left;
+	outline: none;
+  }
+  #addTodo {
+	border-radius: 50%;
+	width: 30px;
+	height: 30px;
+	float: right;
+	border: 0px;
+	background-color: #31b256;
+	cursor: pointer;
+  }
+ 
+  .lineThrough {
+	text-decoration-line: line-through;
+	color: lightgrey;
+  }
+  
+  .doneTodo {
+	background-color: #51047a;
+	color: white;
+  }
+  .removeTodo {
+	background-color: #4c77e2;
+	color: white;
+  }
+  
+  .doneTodoGrey {
+	background-color: grey;
+  }
+  
+  
+
+  
